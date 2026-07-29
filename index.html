@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미국 대학 진학 가이드 - Direct·패스웨이·2+2 편입 AI 진단 | US Study Guide</title>
+    <meta name="description" content="US News 2026 데이터 기반 미국 대학 진학 AI 진단. Direct 입학·패스웨이(조건부입학)·커뮤니티칼리지 2+2 편입까지, 특정 유학원과 무관한 무료 정보 가이드.">
+
+    <!-- Open Graph / 카카오톡 · 페이스북 미리보기 -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="US Study Guide">
+    <meta property="og:title" content="미국 대학 진학, AI로 설계하다 | US Study Guide">
+    <meta property="og:description" content="US News 2026 데이터 기반 미국 대학 진학 AI 진단. Direct·패스웨이·2+2 편입 중 내 상황에 맞는 진학 루트를 3분 만에. 무료 가이드.">
+    <meta property="og:url" content="https://jaebong-choi.github.io/us-study-guide/">
+    <meta property="og:image" content="https://jaebong-choi.github.io/us-study-guide/assets/img/hero-campus.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="미국 대학 진학, AI로 설계하다 | US Study Guide">
+    <meta name="twitter:description" content="US News 2026 데이터 기반 미국 대학 진학 AI 진단. Direct·패스웨이·2+2 편입까지 3분 만에.">
+    <meta name="twitter:image" content="https://jaebong-choi.github.io/us-study-guide/assets/img/hero-campus.jpg">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+    <!-- 화면 모드(다크/라이트) — 렌더링 전에 적용해 깜빡임 방지.
+         키를 허브·영국·호주·캐나다 사이트와 공유하므로 한 번 고르면 전체에 유지된다. -->
+    <script>
+        (function () {
+            /* 기본값은 라이트. 저장된 선택이 없으면 light 를 저장까지 해서
+               같은 도메인의 다른 사이트에도 그대로 이어지게 한다. */
+            var mode = 'light';
+            try {
+                var saved = localStorage.getItem('sgh-theme');
+                if (saved === 'light' || saved === 'dark') mode = saved;
+                else localStorage.setItem('sgh-theme', mode);
+            } catch (e) {}
+            document.documentElement.setAttribute('data-theme', mode);
+        })();
+        /* 매개변수 이름은 t()(번역 함수)와 겹치지 않게 theme으로 둔다. */
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            syncThemeLabel();
+        }
+        /* 스위치의 aria 상태와 라벨을 현재 테마·언어에 맞춘다.
+           언어를 바꿀 때도 라벨을 다시 써야 하므로 i18n.js의 applyLang이 호출한다. */
+        function syncThemeLabel() {
+            var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            document.querySelectorAll('.theme-switch').forEach(function (b) {
+                b.setAttribute('aria-checked', isLight ? 'true' : 'false');
+            });
+            document.querySelectorAll('[data-theme-label]').forEach(function (e) {
+                e.textContent = (typeof t === 'function')
+                    ? t(isLight ? 'themeLight' : 'themeDark')
+                    : (isLight ? '라이트' : '다크');
+            });
+        }
+        function toggleTheme() {
+            var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            try { localStorage.setItem('sgh-theme', next); } catch (e) {}
+        }
+        // <head> 인라인 적용값에 스위치 상태(라벨·aria)를 맞춘다
+        document.addEventListener('DOMContentLoaded', function () {
+            applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+        });
+    </script>
+
+    <!-- 한국어/English 사전 · 번역 함수 (t · tr · applyLang · setLang) -->
+    <script src="i18n.js?v=20260729"></script>
+
+    <!-- Tally 팝업 위젯 (무료 상담 신청 폼) -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'ink': '#000000',
+                        'ink2': '#1d1d1f',
+                        'paper': '#f5f5f7',
+                        'mute': '#86868b',
+                        'gold': '#FFDE59',
+                        'gold-deep': '#F2CB2E',
+                        'usred': '#B31942',
+                        'royal': '#0A3161',
+                    },
+                    letterSpacing: {
+                        'tighter2': '-0.028em',
+                        'tight2': '-0.022em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        #hero-section {
+            background:
+                radial-gradient(ellipse 85% 60% at 50% 52%, rgba(0,0,0,.62) 0%, rgba(0,0,0,.30) 55%, rgba(0,0,0,0) 78%),
+                linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.90) 100%),
+                url('assets/img/hero-campus.jpg') center/cover no-repeat;
+        }
+        .hero-shadow { text-shadow: 0 2px 20px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.55); }
+        .photo-header { background-size: cover; background-position: center; color:#f5f5f7; }
+        .glass-nav { background: rgba(0,0,0,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255,255,255,.1); }
+        .pill-btn { border-radius: 980px; transition: all .3s ease; }
+        .section-dark { background-color:#000; color:#f5f5f7; }
+        .section-light { background-color:#f5f5f7; color:#1d1d1f; }
+        .fade-in-up { animation: fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards; opacity:0; transform:translateY(20px); }
+        @keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
+        @media (prefers-reduced-motion: reduce) { .fade-in-up { animation:none; opacity:1; transform:none; } }
+        .chat-bubble-ai { background:#1d1d1f; border:1px solid #2d2d2f; border-radius:20px 20px 20px 6px; }
+        .chat-bubble-user { background:#FFDE59; color:#111; border-radius:20px 20px 6px 20px; }
+        .apple-card { background:#fff; border-radius:24px; border:1px solid #e5e5e7; transition:transform .3s ease, box-shadow .3s ease; }
+        .apple-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.08); }
+        .info-badge { display:inline-flex; align-items:center; background:#f5f5f7; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:600; color:#3a3a3c; }
+        .route-badge { display:inline-flex; align-items:center; gap:6px; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:700; }
+        .consult-banner { background:#FFDE59; color:#111; border-radius:14px; transition:all .25s ease; }
+        .consult-banner:hover { background:#F2CB2E; transform:translateY(-1px); }
+        .uni-link-banner { background:#fff; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:14px; transition:all .25s ease; }
+        .uni-link-banner:hover { background:#f5f5f7; }
+        .filter-chip { border-radius:980px; border:1px solid #d2d2d7; padding:8px 16px; font-size:13px; font-weight:600; color:#3a3a3c; background:#fff; transition:all .2s ease; }
+        .filter-chip.active { background:#1d1d1f; color:#fff; border-color:#1d1d1f; }
+        a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid #FFDE59; outline-offset:2px; }
+
+        /* 모바일 상단 내비 정리 — 좁은 화면에서 브랜드 부제·허브 링크 글자를 감춰 한 줄 유지 */
+        nav .glass-nav-brand, nav a[href*="study-guide-hub"] { white-space: nowrap; flex-shrink: 0; }
+        @media (max-width: 560px) {
+          nav a[href*="study-guide-hub"] span { display: none; }
+          nav a[href*="study-guide-hub"] { padding-left: 10px; padding-right: 10px; }
+        }
+        @media (max-width: 460px) {
+          #nav-brand-sub { display: none; }
+        }
+        html { scroll-behavior:smooth; }
+
+        /* 언어 전환 (한국어 / English) — 두 칸 세그먼트 컨트롤 */
+        .lang-switch {
+            display:inline-flex; border:1px solid rgba(255,255,255,.28);
+            border-radius:999px; overflow:hidden; flex-shrink:0;
+        }
+        .lang-switch button {
+            border:0; background:transparent; color:#a1a1a6;
+            font-size:11.5px; font-weight:700; letter-spacing:.02em;
+            padding:5px 10px; cursor:pointer; transition:background .2s ease, color .2s ease;
+        }
+        .lang-switch button:hover { color:#f5f5f7; }
+        .lang-switch button.on { background:#f5f5f7; color:#0b0b0f; }
+        html[data-theme="light"] .lang-switch { border-color:rgba(0,0,0,.2); }
+        html[data-theme="light"] .lang-switch button { color:#6e6e73; }
+        html[data-theme="light"] .lang-switch button:hover { color:#1d1d1f; }
+        html[data-theme="light"] .lang-switch button.on { background:#1d1d1f; color:#ffffff; }
+
+        /* 화면 모드 전환 스위치 (허브와 동일 규격) */
+        .theme-switch {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:0; border:0; background:none; color:#f5f5f7;
+            cursor:pointer; flex-shrink:0;
+        }
+        .switch-track {
+            position:relative; display:block; width:52px; height:28px;
+            border-radius:999px; border:1px solid rgba(255,255,255,.3);
+            background:rgba(255,255,255,.06);
+            transition:background .2s ease, border-color .2s ease;
+        }
+        .theme-switch:hover .switch-track { border-color:#f5f5f7; }
+        .theme-switch:focus-visible { outline:none; }
+        .theme-switch:focus-visible .switch-track { outline:2px solid #FFDE59; outline-offset:3px; }
+        .switch-knob {
+            position:absolute; top:3px; left:3px; width:20px; height:20px;
+            border-radius:50%; background:#f5f5f7; z-index:1;
+            transition:transform .25s cubic-bezier(.4,0,.2,1), background .2s ease;
+        }
+        .switch-icon {
+            position:absolute; top:50%; margin-top:-7px; z-index:2;
+            color:#86868b; transition:color .25s ease; pointer-events:none;
+        }
+        .switch-icon.icon-moon { left:6px; color:#000000; }
+        .switch-icon.icon-sun { right:6px; }
+        .switch-label {
+            font-size:12px; font-weight:600; color:#86868b;
+            letter-spacing:-.01em; text-align:left;
+            min-width:40px; white-space:nowrap;
+        }
+        @media (max-width:520px) { .switch-label { display:none; } }
+
+        html[data-theme="light"] .theme-switch { color:#1d1d1f; }
+        html[data-theme="light"] .switch-track { border-color:rgba(0,0,0,.28); background:#ffffff; }
+        html[data-theme="light"] .theme-switch:hover .switch-track { border-color:#1d1d1f; }
+        html[data-theme="light"] .switch-knob { background:#1d1d1f; transform:translateX(24px); }
+        html[data-theme="light"] .switch-icon.icon-moon { color:#86868b; }
+        html[data-theme="light"] .switch-icon.icon-sun { color:#ffffff; }
+        html[data-theme="light"] .switch-label { color:#6e6e73; }
+
+        html[data-theme="light"] body { background-color:#ffffff; color:#1d1d1f; }
+
+        html[data-theme="light"] .glass-nav {
+            background:rgba(255,255,255,.82);
+            border-bottom:1px solid rgba(0,0,0,.1);
+        }
+        html[data-theme="light"] .glass-nav, html[data-theme="light"] .glass-nav a { color:#3a3a3c; }
+        html[data-theme="light"] .glass-nav .text-white,
+        html[data-theme="light"] .glass-nav a:hover { color:#1d1d1f !important; }
+        html[data-theme="light"] .glass-nav .text-gray-300 { color:#3a3a3c !important; }
+        html[data-theme="light"] .glass-nav .border-gray-600 { border-color:#c7c7cc !important; }
+        html[data-theme="light"] .glass-nav .text-gold { color:#A87E00 !important; }
+
+        /* 진단 대화 섹션 */
+        html[data-theme="light"] #chat-section { background-color:#f5f5f7; color:#1d1d1f; }
+        html[data-theme="light"] .chat-bubble-ai { background:#ffffff; border-color:#e5e5e7; color:#1d1d1f; }
+        html[data-theme="light"] #chat-section .bg-\[\#2d2d2f\] { background-color:#ffffff !important; }
+        html[data-theme="light"] #chat-section .text-\[\#f5f5f7\] { color:#1d1d1f !important; }
+        html[data-theme="light"] #chat-section .border-\[\#3d3d40\] { border-color:#d2d2d7 !important; }
+
+        /* 푸터 */
+        html[data-theme="light"] footer.bg-\[\#0b0b0c\] { background-color:#f5f5f7 !important; }
+        html[data-theme="light"] footer.bg-\[\#0b0b0c\] .text-white { color:#1d1d1f !important; }
+        html[data-theme="light"] footer.bg-\[\#0b0b0c\] .text-gold { color:#A87E00 !important; }
+        html[data-theme="light"] footer.bg-\[\#0b0b0c\] .text-gray-500,
+        html[data-theme="light"] footer.bg-\[\#0b0b0c\] .text-gray-600 { color:#6e6e73 !important; }
+        html[data-theme="light"] .border-gray-900 { border-color:#d2d2d7 !important; }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+    <!-- Global Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between text-xs text-paper font-light tracking-wide">
+            <a href="#" onclick="goHome(); return false;" class="opacity-90 hover:opacity-100 transition flex items-center gap-2 whitespace-nowrap shrink-0 glass-nav-brand">
+                <i class="fa-solid fa-map-location-dot text-gold"></i>
+                <span class="font-bold text-white tracking-normal text-[13px]">US Study Guide</span>
+                <span id="nav-brand-sub" class="font-semibold text-white tracking-normal ml-1 border-l border-gray-600 pl-2" data-i18n="navTagline">미국 진학 AI</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" onclick="startConsulting(); return false;" class="opacity-80 hover:opacity-100 transition" data-i18n="navUg">진학 진단</a>
+                <a href="#routes-intro" onclick="goHomeThen('routes-intro'); return false;" class="opacity-80 hover:opacity-100 transition" data-i18n="navRoutes">3가지 경로</a>
+                <a href="https://educationusa.state.gov/" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition">EducationUSA</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="lang-switch" role="group" data-i18n-aria="langAria" aria-label="언어 선택">
+                    <button type="button" data-lang="ko" onclick="setLang('ko')" aria-pressed="true">KO</button>
+                    <button type="button" data-lang="en" onclick="setLang('en')" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="theme-switch" role="switch" aria-checked="false" onclick="toggleTheme()" data-i18n-aria="themeAria" data-i18n-title="themeTitle" aria-label="화면 모드 전환" title="밝게 / 어둡게">
+                    <span class="switch-track" aria-hidden="true">
+                        <span class="switch-knob"></span>
+                        <svg class="switch-icon icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+                        <svg class="switch-icon icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    </span>
+                    <span class="switch-label" data-theme-label>다크</span>
+                </button>
+                <a href="https://jaebong-choi.github.io/study-guide-hub/" class="text-gray-300 hover:text-white transition border border-gray-600 hover:border-gray-400 rounded-full px-3 py-1.5 inline-flex items-center gap-1.5 whitespace-nowrap font-medium"><i class="fa-solid fa-globe text-gold"></i> <span data-i18n="navHub">국가 선택</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="app-container" class="flex-grow pt-14 flex flex-col">
+
+        <!-- Hero Section -->
+        <section id="hero-section" class="section-dark flex-grow flex flex-col items-center justify-center text-center px-4 relative overflow-hidden min-h-[90vh] py-16">
+            <div class="z-10 fade-in-up" style="animation-delay:.1s;">
+                <h2 class="text-gold font-bold tracking-[.08em] text-sm md:text-base mb-5 hero-shadow">US UNIVERSITY PATHWAY GUIDE · US NEWS 2026</h2>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter2 leading-tight mb-6 text-white hero-shadow" data-i18n-html="heroTitle">
+                    미국 대학 진학,<br>AI로 설계하다.
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-100 font-normal tracking-tight2 mb-10 max-w-2xl mx-auto hero-shadow" data-i18n-html="heroSub">
+                    Direct · 패스웨이 · 2+2 편입 중 내게 맞는 미국 입학 루트를<br class="hidden sm:block"><strong class="text-white font-semibold">3분 만에</strong> 추천받으세요.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="startConsulting()" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 shadow-lg shadow-black/40 w-full sm:w-auto" data-i18n-html="heroUgBtn">
+                        진학 경로 진단 <span class="text-sm font-medium opacity-70">Direct · 패스웨이 · 2+2</span>
+                    </button>
+                    <a href="#routes-intro" class="pill-btn bg-white/15 border border-white/60 text-white hover:bg-white/25 hover:border-gold hover:text-gold px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 w-full sm:w-auto backdrop-blur-md shadow-lg shadow-black/30" data-i18n-html="heroRoutesBtn">
+                        3가지 경로 살펴보기 <i class="fa-solid fa-arrow-down text-sm opacity-80"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home: 가이드 소개 · 3가지 경로 · 공식 정보 -->
+        <section id="home-extra" class="bg-white text-ink2">
+            <div class="py-24 px-4">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <img src="assets/img/campus-hall.jpg" alt="미국 대학 캠퍼스 건물" data-i18n-alt="homeImgAlt1" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/5]" loading="lazy">
+                    <div>
+                        <p class="text-royal font-semibold tracking-widest text-[13px] uppercase mb-4">US Study Guide</p>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter2 leading-tight mb-6 text-black" data-i18n-html="homeTitle">누구에게나 열린,<br>중립적인 진학 가이드.</h2>
+                        <p class="text-[16px] text-gray-600 leading-relaxed mb-8" data-i18n="homeDesc">이 페이지는 특정 유학원과 무관한 무료 정보 가이드입니다. US News 2026 순위와 각 대학·기관 공시 정보를 기반으로, 성적·영어·예산에 맞는 미국 진학 경로를 스스로 확인할 수 있도록 만들었습니다.</p>
+                        <ul class="space-y-4 mb-9">
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-chart-simple"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5" data-i18n-html="homeLi1"><strong>US News 2026 순위 · 26/27 학비 데이터</strong> 기반의 학교별 안내</span></li>
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-route"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5" data-i18n-html="homeLi2">Direct · 패스웨이 · 2+2 편입 <strong>경로별 장단점 비교</strong></span></li>
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-link"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5" data-i18n-html="homeLi3">진단 결과를 <strong>링크 하나로 저장·공유</strong>, 대학 공식 페이지로 바로 연결</span></li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="startConsulting()" class="pill-btn bg-ink2 hover:bg-black text-white px-7 py-3.5 font-semibold text-center" data-i18n="homeUgStart">진학 진단 시작</button>
+                            <a href="#routes-intro" class="pill-btn bg-white border border-gray-300 text-ink2 hover:bg-gray-50 px-7 py-3.5 font-medium text-center" data-i18n="homeRoutesStart">경로 한눈에 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3가지 경로 요약 -->
+            <div id="routes-intro" class="py-20 px-4 bg-paper">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-14">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black" data-i18n-html="rSumTitle">미국 대학으로 가는<br class="sm:hidden"> 세 가지 길.</h2>
+                        <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed" data-i18n="rSumSub">성적·영어·예산 조합에 따라 최적 경로가 달라집니다. 진단을 시작하면 아래 세 경로 중 내 상황에 맞는 루트를 추천해 드립니다.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="apple-card p-8">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-bolt"></i></div>
+                            <h3 class="text-xl font-bold text-black mb-1" data-i18n="rSumDirTitle">Direct 입학</h3>
+                            <p class="text-royal text-sm font-semibold mb-4" data-i18n="rSumDirSub">고교 졸업 → 바로 1학년</p>
+                            <p class="text-[14px] text-gray-600 leading-relaxed" data-i18n="rSumDirDesc">내신 1~2등급대 + TOEFL 80~100 이상이 기본. 최상위권은 SAT/ACT 필수화 추세입니다. 에세이·활동까지 준비량이 가장 많지만 소속감이 확실한 정공법입니다.</p>
+                        </div>
+                        <div class="apple-card p-8">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-layer-group"></i></div>
+                            <h3 class="text-xl font-bold text-black mb-1" data-i18n="rSumPwTitle">패스웨이 (조건부입학)</h3>
+                            <p class="text-royal text-sm font-semibold mb-4" data-i18n="rSumPwSub">1년 과정 → 2학년 진학</p>
+                            <p class="text-[14px] text-gray-600 leading-relaxed" data-i18n="rSumPwDesc">SAT 없이 내신 3~6등급대·영어 중위권도 주립 명문에 진입하는 경로. 1년간 영어+학점 과목을 듣고 조건 충족 시 2학년으로 올라가 총 기간 연장이 없습니다.</p>
+                        </div>
+                        <div class="apple-card p-8">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-arrows-turn-right"></i></div>
+                            <h3 class="text-xl font-bold text-black mb-1" data-i18n="rSumTfTitle">2+2 편입 (커뮤니티칼리지)</h3>
+                            <p class="text-royal text-sm font-semibold mb-4" data-i18n="rSumTfSub">CC 2년 → 4년제 3학년</p>
+                            <p class="text-[14px] text-gray-600 leading-relaxed" data-i18n="rSumTfDesc">학비를 절반 이하로 줄이면서 UC 계열 등 명문 편입을 노리는 루트. UC TAG(6개 캠퍼스 편입 보장)는 국제학생도 활용할 수 있습니다. 편입 GPA 관리가 핵심입니다.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <button onclick="startConsulting()" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold inline-flex items-center gap-2" data-i18n-html="rSumCta">내 경로 진단받기 <i class="fa-solid fa-arrow-right text-xs"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-20 px-4">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 leading-tight mb-5 text-black" data-i18n-html="srcTitle">정보는 언제나,<br>공식 출처에서 확인하세요.</h3>
+                        <p class="text-[15px] text-gray-600 leading-relaxed mb-7" data-i18n="srcDesc">이 가이드의 진단 결과는 방향을 잡기 위한 1차 자료입니다. 입학요건·학비·비자 규정은 수시로 바뀌므로, 최종 결정 전에는 반드시 아래 공식 채널에서 최신 정보를 확인하세요.</p>
+                        <ul class="space-y-2.5 text-[14px] text-gray-700 mb-7">
+                            <li class="flex gap-3"><i class="fa-solid fa-building-columns text-royal mt-1 shrink-0"></i><a href="https://educationusa.state.gov/" target="_blank" rel="noopener" class="hover:underline" data-i18n-html="srcLink1"><strong>EducationUSA</strong> — 미 국무부 공식 유학 안내</a></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-file-signature text-royal mt-1 shrink-0"></i><a href="https://www.commonapp.org/" target="_blank" rel="noopener" class="hover:underline" data-i18n-html="srcLink2"><strong>Common App</strong> — 미국 대학 공통 지원 시스템</a></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-passport text-royal mt-1 shrink-0"></i><a href="https://studyinthestates.dhs.gov/" target="_blank" rel="noopener" class="hover:underline" data-i18n-html="srcLink3"><strong>Study in the States</strong> — 국토안보부 F-1 비자 공식 안내</a></li>
+                        </ul>
+                    </div>
+                    <img src="assets/img/us-flag.jpg" alt="미국 도심의 성조기" data-i18n-alt="homeImgAlt2" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3] order-1 md:order-2" loading="lazy">
+                </div>
+            </div>
+
+            <footer class="bg-[#0b0b0c] py-12 text-center">
+                <p class="text-white font-bold text-[15px] mb-4"><i class="fa-solid fa-map-location-dot text-gold mr-2"></i>US Study Guide</p>
+                <p class="text-xs text-gray-500 font-medium mb-2" data-i18n="footerCopy">ⓒ US Study Guide. 정보 제공 목적으로 제작된 페이지입니다.</p>
+                <p class="text-[11px] text-gray-600 leading-relaxed max-w-xl mx-auto px-4" data-i18n="footerDisclaimer">본 사이트는 특정 유학원·기관과 무관한 무료 정보 페이지입니다. 대학 순위는 US News Best Colleges 2026(2025년 9월 발표), 과정·요건·학비는 각 대학 및 운영 기관 공시 기준이며 학기마다 변동될 수 있습니다. 최종 지원 전 반드시 각 대학·기관 공식 페이지에서 최신 요강을 확인하세요.</p>
+            </footer>
+        </section>
+
+        <!-- Interactive Chat Section -->
+        <section id="chat-section" class="section-dark flex-grow py-20 hidden">
+            <div class="max-w-2xl mx-auto px-4 flex flex-col h-full min-h-[70vh]">
+                <div id="chat-history" class="flex-grow overflow-y-auto space-y-6 mb-8 pb-4">
+                </div>
+                <div id="options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 fade-in-up mt-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="hidden w-full bg-white text-ink2">
+        </section>
+
+    </main>
+
+    <script>
+
+        // ── 공통 상수 · 상태 ─────────────────────────────────────────
+        const EDU_USA_URL = 'https://educationusa.state.gov/';
+        // 미국 유학 공식 정보 링크
+        const usBoards = {
+            common: [
+                { url: 'https://educationusa.state.gov/', title: "EducationUSA — 미 국무부 공식 유학 안내 (장학금 · 준비 절차)" },
+                { url: 'https://studyinthestates.dhs.gov/', title: "Study in the States — 국토안보부 F-1 학생비자 공식 안내" },
+                { url: 'https://www.usnews.com/best-colleges', title: "US News Best Colleges — 최신 대학 순위 확인" }
+            ],
+            ug: [
+                { url: 'https://www.commonapp.org/', title: "Common App — 미국 대학 공통 지원 시스템" },
+                { url: 'https://admission.universityofcalifornia.edu/admission-requirements/transfer-requirements/', title: "University of California — 편입(Transfer) 공식 안내 · TAG" }
+            ]
+        };
+        let currentState = {};
+        let step = 0;
+        let flowStack = []; // 질문별 스냅샷. 뒤로가기용
+
+        const OPT_BTN_CLASS = 'pill-btn bg-[#2d2d2f] text-[#f5f5f7] border border-[#3d3d40] hover:bg-gold hover:border-gold hover:text-black py-3.5 px-4 font-medium shadow-sm text-[14px] md:text-[15px] text-center w-full';
+
+        // IELTS -> TOEFL iBT 환산 (밴드 판정용)
+        function ieltsToToefl(s) {
+            if (s >= 8.5) return 115; if (s >= 8.0) return 110; if (s >= 7.5) return 102;
+            if (s >= 7.0) return 94; if (s >= 6.5) return 79; if (s >= 6.0) return 60;
+            if (s >= 5.5) return 46; if (s >= 5.0) return 35; return 30;
+        }
+        // Duolingo English Test -> TOEFL iBT 환산
+        function detToToefl(s) {
+            if (s >= 160) return 110; if (s >= 145) return 95; if (s >= 130) return 80;
+            if (s >= 120) return 70; if (s >= 105) return 55; if (s >= 95) return 45; return 35;
+        }
+        // PTE Academic -> TOEFL iBT 환산
+        function pteToToefl(s) {
+            if (s >= 84) return 110; if (s >= 76) return 100; if (s >= 66) return 90;
+            if (s >= 58) return 80; if (s >= 50) return 70; if (s >= 42) return 58; return 45;
+        }
+
+        // ── 계열별 추천 전공(학부) ──────────────────────────────────
+        const fieldMajors = {
+            biz:  { label:'경영 · 경제 · 금융', majors:['경영학 (Business Administration)','경제학 (Economics)','회계학 (Accounting)','재무 (Finance)','마케팅 (Marketing)'] },
+            eng:  { label:'공학', majors:['기계공학 (Mechanical Eng.)','전기 · 전자공학 (Electrical Eng.)','토목공학 (Civil Eng.)','항공우주공학 (Aerospace Eng.)','화학공학 (Chemical Eng.)'] },
+            cs:   { label:'컴퓨터 · 데이터 · AI', majors:['컴퓨터과학 (Computer Science)','인공지능 (Artificial Intelligence)','데이터사이언스 (Data Science)','소프트웨어공학 (Software Eng.)','사이버보안 (Cybersecurity)'] },
+            soc:  { label:'사회과학 · 미디어 · 국제관계', majors:['국제관계학 (International Relations)','정치학 (Political Science)','커뮤니케이션 (Communication)','사회학 (Sociology)','심리학 (Psychology)'] },
+            sci:  { label:'자연과학 · 수학', majors:['수학 (Mathematics)','물리학 (Physics)','화학 (Chemistry)','생명과학 (Biology)','통계학 (Statistics)'] },
+            arts: { label:'인문 · 어학 · 예술', majors:['영문학 (English)','역사학 (History)','철학 (Philosophy)','건축학 (Architecture)','디자인 (Design)','영화 (Film Studies)'] }
+        };
+
+        // ── 패스웨이 운영 기관 · 대표 제휴 대학 ─────────────────────
+        const pathwayProviders = [
+            { name:'Shorelight', tag:'전미 최대급 · 20여 개 제휴', unis:'American · Auburn · UIC · FIU · Gonzaga · LSU · UCF · U of South Carolina · Utah · UMass Boston · UTSA 등' },
+            { name:'INTO', tag:'캠퍼스 내 센터 운영', unis:'Oregon State · George Mason · Hofstra · Suffolk · Drew · UAB (버밍엄 앨라배마)' },
+            { name:'Kaplan Int’l Pathways', tag:'글로벌 패스웨이 운영사', unis:'Arizona State(ASU) · Pace · Simmons · UConn · Tulsa' },
+            { name:'대학 직영 패스웨이', tag:'대학이 직접 운영', unis:'UC Davis GAP(편입 준비형) · UCSB IUPP · San Francisco State IY1 등' }
+        ];
+
+        // ── 주요 커뮤니티칼리지(2+2 편입 출발점) ────────────────────
+        const ccColleges = [
+            { name:'Santa Monica College', ko:'샌타모니카 칼리지', region:'캘리포니아 · LA', note:'UCLA 편입 전미 최다 배출로 유명한 대표 CC. UC TAG 지원.', url:'https://www.smc.edu/' },
+            { name:'De Anza College', ko:'디앤자 칼리지', region:'캘리포니아 · 실리콘밸리', note:'UC 편입 실적 최상위권. 쿠퍼티노 위치로 CS 계열 인기.', url:'https://www.deanza.edu/' },
+            { name:'Diablo Valley College', ko:'디아블로 밸리 칼리지', region:'캘리포니아 · 베이에리어', note:'UC Berkeley 인접 지역. 버클리 편입 다수 배출.', url:'https://www.dvc.edu/' },
+            { name:'Irvine Valley College', ko:'어바인 밸리 칼리지', region:'캘리포니아 · 어바인', note:'UC Irvine 인접. 안전한 도시 환경으로 유학생 선호.', url:'https://www.ivc.edu/' },
+            { name:'Bellevue College', ko:'벨뷰 칼리지', region:'워싱턴 · 시애틀 동부', note:'UW 시애틀 편입 1위 CC. 2026년 WWU 편입 보장(GPA 2.5+) 협약.', url:'https://www.bellevuecollege.edu/international/' },
+            { name:'Edmonds College', ko:'에드먼즈 칼리지', region:'워싱턴 · 시애틀 북부', note:'캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.', url:'https://www.edmonds.edu/' },
+            { name:'Seattle Central College', ko:'시애틀 센트럴 칼리지', region:'워싱턴 · 시애틀 도심', note:'도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.', url:'https://seattlecentral.edu/' },
+            { name:'Green River College', ko:'그린리버 칼리지', region:'워싱턴 · 오번', note:'유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.', url:'https://www.greenriver.edu/' }
+        ];
+
+        // ── 대학 목록 (US News 2026 · 경로 데이터) ───────────────────
+        // grp: direct(Direct 전형 중심) | sl(Shorelight) | into(INTO) | kaplan(Kaplan) | own(대학 직영 패스웨이)
+        // pw: 패스웨이 과정명 (없으면 null) · tf: CC 편입 루트가 활발한 학교
+        const UG_UNIS = [
+            { n:"Massachusetts Institute of Technology (MIT)", k:"매사추세츠공과대학교", rank:2, city:"케임브리지 (MA)", grp:"direct", pw:null, tf:false, url:"https://mitadmissions.org/", note:"패스웨이·편입 문이 사실상 닫혀 있는 세계 최상위 공대. SAT/ACT 필수이며 Direct 전형으로만 승부합니다." },
+            { n:"Harvard University", k:"하버드대학교", rank:3, city:"케임브리지 (MA)", grp:"direct", pw:null, tf:false, url:"https://college.harvard.edu/admissions", note:"2026-27 사이클부터 SAT/ACT 필수. 내신 최상위 + 에세이·활동까지 갖춘 Direct 전형만 운영합니다." },
+            { n:"Stanford University", k:"스탠퍼드대학교", rank:4, city:"스탠퍼드 (CA)", grp:"direct", pw:null, tf:false, url:"https://admission.stanford.edu/", note:"실리콘밸리 중심의 최상위 명문. SAT/ACT 필수화, 편입 정원도 극소수라 Direct 준비가 기본입니다." },
+            { n:"University of California, Berkeley", k:"UC 버클리", rank:15, city:"버클리 (CA)", grp:"direct", pw:null, tf:true, url:"https://admissions.berkeley.edu/", note:"신입 경쟁이 극심하지만 캘리포니아 CC 출신 편입생을 대규모로 선발합니다. TAG 미참여라 편입 GPA 3.7+ 관리가 관건입니다." },
+            { n:"University of California, Los Angeles (UCLA)", k:"UCLA", rank:17, city:"로스앤젤레스 (CA)", grp:"direct", pw:null, tf:true, url:"https://admission.ucla.edu/", note:"편입 합격자의 93%가 캘리포니아 CC 출신. 샌타모니카·디앤자 등에서 2+2로 진입하는 대표 명문입니다." },
+            { n:"University of Michigan", k:"미시간대학교 (앤아버)", rank:20, city:"앤아버 (MI)", grp:"direct", pw:null, tf:true, url:"https://admissions.umich.edu/", note:"공대·경영 모두 최상위권 주립 명문. Direct가 기본이며 타주 CC 출신 편입도 받지만 경쟁이 높습니다." },
+            { n:"University of California, San Diego", k:"UC 샌디에이고", rank:29, city:"샌디에이고 (CA)", grp:"direct", pw:null, tf:true, url:"https://admissions.ucsd.edu/", note:"이공계 강세 UC. TAG 미참여이지만 CC 편입 루트가 활발해 2+2 목적지로 인기가 높습니다." },
+            { n:"New York University (NYU)", k:"뉴욕대학교", rank:32, city:"뉴욕 (NY)", grp:"direct", pw:null, tf:true, url:"https://www.nyu.edu/admissions.html", note:"맨해튼 도심 캠퍼스의 글로벌 사립. 편입생 선발 규모가 큰 편이라 CC·타 대학 경유 진입도 현실적입니다." },
+            { n:"University of California, Davis", k:"UC 데이비스", rank:32, city:"데이비스 (CA)", grp:"own", pw:"UC Davis GAP (직영 · 편입 준비형)", tf:true, url:"https://www.ucdavis.edu/admissions", note:"UC TAG 참여 캠퍼스. 대학이 직접 운영하는 GAP 과정에서 영어·학점을 쌓아 UC 편입을 준비할 수 있습니다." },
+            { n:"University of California, Irvine", k:"UC 어바인", rank:32, city:"어바인 (CA)", grp:"direct", pw:null, tf:true, url:"https://www.admissions.uci.edu/", note:"UC TAG 참여 캠퍼스로 CC에서 요건 충족 시 편입이 보장됩니다. 한인 인프라가 잘 갖춰진 지역입니다." },
+            { n:"University of Illinois Urbana-Champaign", k:"일리노이대학교 어배너-섐페인", rank:36, city:"어배너-섐페인 (IL)", grp:"direct", pw:null, tf:false, url:"https://www.admissions.illinois.edu/", note:"CS·공학 최상위권 주립. Direct 전형이 기본이며 국제학생 지원 규모가 큰 대학입니다." },
+            { n:"University of Wisconsin–Madison", k:"위스콘신대학교 매디슨", rank:36, city:"매디슨 (WI)", grp:"direct", pw:null, tf:false, url:"https://admissions.wisc.edu/", note:"연구 중심 명문 주립. 국내 유학원 통계에서도 국제전형 합격 사례가 꾸준한 학교입니다." },
+            { n:"University of California, Santa Barbara", k:"UC 샌타바버라", rank:40, city:"샌타바버라 (CA)", grp:"own", pw:"UCSB IUPP (직영 패스웨이)", tf:true, url:"https://admissions.ucsb.edu/", note:"UC TAG 참여 + 대학 직영 패스웨이(IUPP: GPA 2.7, TOEFL 75)까지 보유한 드문 UC 캠퍼스입니다." },
+            { n:"Ohio State University", k:"오하이오주립대학교", rank:41, city:"콜럼버스 (OH)", grp:"direct", pw:null, tf:false, url:"https://undergrad.osu.edu/", note:"미국 최대급 규모의 주립 명문. 신입생 학비 동결 보장(Tuition Guarantee) 제도가 특징입니다." },
+            { n:"University of Washington", k:"워싱턴대학교 (시애틀)", rank:42, city:"시애틀 (WA)", grp:"direct", pw:null, tf:true, url:"https://admit.washington.edu/", note:"CS·의생명 강세. 벨뷰 칼리지 등 워싱턴주 CC에서의 편입 루트가 가장 활발한 학교 중 하나입니다." },
+            { n:"Rutgers University–New Brunswick", k:"럿거스대학교 뉴브런즈윅", rank:42, city:"뉴브런즈윅 (NJ)", grp:"direct", pw:null, tf:false, url:"https://admissions.rutgers.edu/", note:"뉴욕 생활권의 대형 주립. 국제학생 전형 문호가 넓어 합격 사례가 많은 학교입니다." },
+            { n:"Purdue University", k:"퍼듀대학교", rank:46, city:"웨스트라피엣 (IN)", grp:"direct", pw:null, tf:false, url:"https://www.admissions.purdue.edu/", note:"공학 명문 주립. 학비가 합리적이었으나 26-27부터 공대·CS 국제학생 추가 비용이 도입됐습니다." },
+            { n:"University of Connecticut", k:"코네티컷대학교", rank:70, city:"스토어스 (CT)", grp:"kaplan", pw:"UConn 패스웨이 (Kaplan 운영)", tf:false, url:"https://admissions.uconn.edu/", note:"동부 명문 주립. Kaplan 운영 패스웨이로 SAT 없이 진입해 2학년으로 진학할 수 있습니다." },
+            { n:"Stony Brook University", k:"스토니브룩대학교 (뉴욕주립대)", rank:59, city:"스토니브룩 (NY)", grp:"sl", pw:"국제학생 프로그램 (Shorelight 지원)", tf:false, url:"https://www.stonybrook.edu/undergraduate-admissions/", note:"SUNY 플래그십급 연구 중심 대학. 국내 패스웨이 합격 사례가 많은 대표 학교입니다." },
+            { n:"University of Illinois Chicago (UIC)", k:"일리노이대학교 시카고", rank:84, city:"시카고 (IL)", grp:"sl", pw:"UIC Global (Shorelight)", tf:false, url:"https://admissions.uic.edu/", note:"시카고 도심의 연구 중심 주립. Shorelight 운영 패스웨이로 영어 성적 부담을 낮춰 진입합니다." },
+            { n:"American University", k:"아메리칸대학교", rank:88, city:"워싱턴 D.C.", grp:"sl", pw:"AU Pathway (Shorelight)", tf:false, url:"https://www.american.edu/admissions/", note:"국제관계·정치 특화 명문. 워싱턴 D.C. 소재로 인턴십 기회가 풍부합니다." },
+            { n:"Florida International University", k:"플로리다국제대학교", rank:97, city:"마이애미 (FL)", grp:"sl", pw:"FIU Global First Year (Shorelight)", tf:false, url:"https://admissions.fiu.edu/", note:"마이애미 소재 대형 주립. 경영·호스피탈리티 강세로 패스웨이 진입 장벽이 낮은 편입니다." },
+            { n:"Auburn University", k:"오번대학교", rank:102, city:"오번 (AL)", grp:"sl", pw:"Auburn Global (Shorelight)", tf:false, url:"https://www.auburn.edu/admissions/", note:"남부 전통 명문 주립. Auburn Global 패스웨이로 공학·경영 전공 진입이 활발합니다." },
+            { n:"George Mason University", k:"조지메이슨대학교", rank:109, city:"페어팩스 (VA)", grp:"into", pw:"INTO Mason (캠퍼스 내)", tf:false, url:"https://www.gmu.edu/admissions-aid", note:"워싱턴 D.C. 생활권 주립. INTO 캠퍼스 센터에서 패스웨이 수료 후 2학년 진학이 표준 루트입니다." },
+            { n:"Arizona State University", k:"애리조나주립대학교", rank:121, city:"템피 (AZ)", grp:"kaplan", pw:"ASU-USA Pathways (Kaplan)", tf:false, url:"https://admission.asu.edu/", note:"혁신 대학 평가 전미 1위 단골. 유연한 국제전형과 Kaplan 패스웨이(IELTS 5.5~)를 함께 운영합니다." },
+            { n:"University of Utah", k:"유타대학교", rank:151, city:"솔트레이크시티 (UT)", grp:"sl", pw:"Utah Global (Shorelight)", tf:false, url:"https://admissions.utah.edu/", note:"유타주 플래그십. 아시아 캠퍼스(송도) 연계로 한국 학생에게 익숙한 주립 명문입니다." },
+            { n:"Oregon State University", k:"오리건주립대학교", rank:173, city:"코밸리스 (OR)", grp:"into", pw:"INTO OSU (캠퍼스 내)", tf:false, url:"https://admissions.oregonstate.edu/", note:"INTO 미국 1호 캠퍼스 센터. 공학·컴퓨터 전공의 패스웨이 진입 사례가 오래 축적돼 있습니다." },
+            { n:"University of Massachusetts Boston", k:"매사추세츠대학교 보스턴", rank:213, city:"보스턴 (MA)", grp:"sl", pw:"UMass Boston 패스웨이 (Shorelight)", tf:false, url:"https://www.umb.edu/admissions/", note:"보스턴 도심 주립. 진입 장벽이 낮고 보스턴 생활권에서 편입·대학원 진학의 발판으로 활용됩니다." }
+        ];
+
+        // ── 대학별 상세 안내 데이터 ─────────────────────────────────
+        const UNI_INFO = {
+            "Massachusetts Institute of Technology (MIT)": { k:"매사추세츠공과대학교", found:"1861년", city:"매사추세츠 케임브리지", students:"약 11,900명", majors:["컴퓨터과학","전기공학","기계공학","수학","물리학","경제학"], desc:"공학·과학 분야 세계 최정상 연구 대학. 노벨상 수상자를 100명 가까이 배출했으며, 국제학생도 SAT/ACT와 최상위 성적으로만 선발하는 Direct 전형의 정점입니다." },
+            "Harvard University": { k:"하버드대학교", found:"1636년", city:"매사추세츠 케임브리지", students:"약 25,000명", majors:["경제학","정치학","컴퓨터과학","생명과학","역사학","심리학"], desc:"미국에서 가장 오래된 대학이자 세계 최고 수준의 종합 명문. 학부는 리버럴아츠 중심으로 운영되며 재정보조가 필요 기반(need-based)으로 제공됩니다." },
+            "Stanford University": { k:"스탠퍼드대학교", found:"1885년", city:"캘리포니아 스탠퍼드", students:"약 17,000명", majors:["컴퓨터과학","공학","경영과학","생명과학","심리학"], desc:"실리콘밸리 한가운데 자리한 혁신의 산실. 창업·테크 생태계와의 연결이 압도적이며 CS·공학 전공의 세계적 정점으로 꼽힙니다." },
+            "University of California, Berkeley": { k:"UC 버클리", found:"1868년", city:"캘리포니아 버클리", students:"약 45,000명", majors:["EECS(전기·컴퓨터)","경제학","데이터사이언스","화학","정치학"], desc:"공립대학 세계 1위를 다투는 UC 시스템의 간판. 신입 국제전형은 극도로 치열하지만, 캘리포니아 CC에서 GPA를 만든 편입생에게는 상대적으로 넓은 문이 열립니다." },
+            "University of California, Los Angeles (UCLA)": { k:"UCLA", found:"1919년", city:"캘리포니아 로스앤젤레스", students:"약 46,000명", majors:["경제학","심리학","컴퓨터과학","영화·미디어","생명과학"], desc:"미국에서 지원자가 가장 많은 대학. 편입 합격자의 93%가 캘리포니아 CC 출신으로, 2+2 루트의 최종 목적지로 가장 사랑받는 명문입니다." },
+            "University of Michigan": { k:"미시간대학교 (앤아버)", found:"1817년", city:"미시간 앤아버", students:"약 52,000명", majors:["공학","경영학(Ross)","컴퓨터과학","경제학","심리학"], desc:"'퍼블릭 아이비'의 대표주자. 공대와 로스 경영대가 모두 최상위권이며 대학 스포츠·동문 네트워크 등 미국 대학 문화의 정수를 경험할 수 있습니다." },
+            "University of California, San Diego": { k:"UC 샌디에이고", found:"1960년", city:"캘리포니아 샌디에이고 라호이아", students:"약 42,000명", majors:["생명과학","컴퓨터과학","인지과학","바이오공학","경제학"], desc:"바이오·의공학 연구 클러스터와 맞닿은 이공계 강세 UC. 태평양이 보이는 라호이아 캠퍼스와 안정적인 연구 인프라가 강점입니다." },
+            "New York University (NYU)": { k:"뉴욕대학교", found:"1831년", city:"뉴욕 맨해튼", students:"약 59,000명", majors:["경영학(Stern)","영화(Tisch)","경제학","컴퓨터과학","미디어"], desc:"맨해튼 그리니치빌리지가 곧 캠퍼스인 글로벌 사립. Stern 경영대와 Tisch 예술대가 간판이며 국제학생 비율이 미국 최상위권입니다." },
+            "University of California, Davis": { k:"UC 데이비스", found:"1905년", city:"캘리포니아 데이비스", students:"약 40,000명", majors:["생명과학","농업·환경","수의예과","경제학","컴퓨터과학"], desc:"수의학·농생명 분야 세계 최상위권 UC. TAG 참여 캠퍼스인 데다 직영 패스웨이(GAP)까지 운영해 국제학생의 단계적 진입로가 가장 잘 갖춰져 있습니다." },
+            "University of California, Irvine": { k:"UC 어바인", found:"1965년", city:"캘리포니아 어바인", students:"약 36,000명", majors:["컴퓨터과학","경영학","생명과학","공중보건","심리학"], desc:"계획도시 어바인의 안전한 환경과 한인 인프라로 유학 생활 만족도가 높은 UC. TAG 참여 캠퍼스라 CC 편입 보장 루트의 대표 목적지입니다." },
+            "University of Illinois Urbana-Champaign": { k:"일리노이대학교 어배너-섐페인", found:"1867년", city:"일리노이 어배너-섐페인", students:"약 56,000명", majors:["컴퓨터과학","전기공학","회계학","기계공학","통계학"], desc:"CS 전공 세계 최상위권의 연구 중심 주립. 그레인저 공대의 위상이 압도적이며 한국 유학생 커뮤니티도 오래 자리 잡혀 있습니다." },
+            "University of Wisconsin–Madison": { k:"위스콘신대학교 매디슨", found:"1848년", city:"위스콘신 매디슨", students:"약 50,000명", majors:["경제학","컴퓨터과학","생명과학","교육학","언론학"], desc:"호수를 낀 대학도시 매디슨의 연구 명문. 사회과학부터 공학까지 고르게 강하며 국제전형 합격 사례가 꾸준한 학교입니다." },
+            "University of California, Santa Barbara": { k:"UC 샌타바버라", found:"1909년", city:"캘리포니아 샌타바버라", students:"약 26,000명", majors:["물리학","화학공학","커뮤니케이션","경제학","환경과학"], desc:"노벨상 수상 교수진과 해변 캠퍼스로 유명한 UC. TAG 참여에 직영 패스웨이(IUPP)까지 갖춰 성적대별 진입 선택지가 넓습니다." },
+            "Ohio State University": { k:"오하이오주립대학교", found:"1870년", city:"오하이오 콜럼버스", students:"약 66,000명", majors:["경영학","공학","심리학","보건과학","교육학"], desc:"단일 캠퍼스 기준 미국 최대급 주립. 입학 연도 학비를 졸업까지 동결하는 Tuition Guarantee로 재정 계획을 세우기 좋습니다." },
+            "University of Washington": { k:"워싱턴대학교 (시애틀)", found:"1861년", city:"워싱턴 시애틀", students:"약 52,000명", majors:["컴퓨터과학","의생명과학","간호학","경영학","항공우주공학"], desc:"아마존·마이크로소프트 생활권의 연구 명문. 신입 국제전형 경쟁이 높아, 벨뷰 등 지역 CC에서 2년 후 편입하는 루트가 한국 학생의 단골 전략입니다." },
+            "Rutgers University–New Brunswick": { k:"럿거스대학교 뉴브런즈윅", found:"1766년", city:"뉴저지 뉴브런즈윅", students:"약 50,000명", majors:["경영학","약학","컴퓨터과학","심리학","공학"], desc:"미국 독립 이전에 세워진 유서 깊은 주립. 뉴욕 맨해튼까지 기차로 접근 가능한 위치와 폭넓은 전공 선택지가 강점입니다." },
+            "Purdue University": { k:"퍼듀대학교", found:"1869년", city:"인디애나 웨스트라피엣", students:"약 52,000명", majors:["항공우주공학","기계공학","컴퓨터과학","농공학","경영학"], desc:"닐 암스트롱을 배출한 공학 명문. 오랜 학비 동결 정책으로 주립 중 가성비가 뛰어났으며, 공학 계열 국제학생 선호도가 매우 높습니다." },
+            "University of Connecticut": { k:"코네티컷대학교", found:"1881년", city:"코네티컷 스토어스", students:"약 32,000명", majors:["경영학","간호학","공학","심리학","스포츠매니지먼트"], desc:"뉴잉글랜드의 대표 주립. 농구 명문으로도 유명하며 Kaplan 패스웨이를 통해 SAT 없이 단계적으로 진입할 수 있습니다." },
+            "Stony Brook University": { k:"스토니브룩대학교", found:"1957년", city:"뉴욕 스토니브룩", students:"약 26,000명", majors:["컴퓨터과학","응용수학","생명과학","의예 트랙","경영학"], desc:"뉴욕주립대(SUNY) 시스템의 연구 간판. 이공계 위상 대비 학비가 합리적이라 국제학생 패스웨이 합격 사례가 많습니다." },
+            "University of Illinois Chicago (UIC)": { k:"일리노이대학교 시카고", found:"1982년", city:"일리노이 시카고", students:"약 34,000명", majors:["보건과학","경영학","컴퓨터과학","건축학","공학"], desc:"시카고 도심의 연구 중심 주립. 대도시 인턴십 접근성이 좋고 Shorelight 패스웨이로 영어 부담을 낮춰 시작할 수 있습니다." },
+            "American University": { k:"아메리칸대학교", found:"1893년", city:"워싱턴 D.C.", students:"약 14,000명", majors:["국제관계학","정치학","저널리즘","경영학","공공정책"], desc:"국제관계·정치 분야 특화 사립. 백악관·국제기구가 이웃인 워싱턴 D.C. 입지 덕분에 재학 중 인턴십 기회가 풍부합니다." },
+            "Florida International University": { k:"플로리다국제대학교", found:"1965년", city:"플로리다 마이애미", students:"약 58,000명", majors:["호스피탈리티","경영학","국제경영","건축학","심리학"], desc:"마이애미의 대형 주립. 호텔·관광 계열이 전미 최상위권이며 중남미 비즈니스 허브라는 지역 특성을 살린 전공이 강합니다." },
+            "Auburn University": { k:"오번대학교", found:"1856년", city:"앨라배마 오번", students:"약 30,000명", majors:["공학","경영학","건축학","수의예과","항공학"], desc:"미국 남부의 전통 명문 주립. 안전한 대학 도시와 탄탄한 공학 커리큘럼으로 패스웨이 경유 진학 만족도가 높습니다." },
+            "George Mason University": { k:"조지메이슨대학교", found:"1949년", city:"버지니아 페어팩스", students:"약 39,000명", majors:["경제학","정보기술","정책학","컴퓨터과학","경영학"], desc:"워싱턴 D.C. 근교의 성장형 주립. 경제학과가 유명하고 INTO 캠퍼스 센터가 안정적으로 운영되는 대표 패스웨이 학교입니다." },
+            "Arizona State University": { k:"애리조나주립대학교", found:"1885년", city:"애리조나 템피", students:"약 80,000명", majors:["경영학","공학","저널리즘","컴퓨터과학","디자인"], desc:"US News '가장 혁신적인 대학' 1위에 수년 연속 오른 초대형 주립. 국제학생 문호가 넓고 온라인·패스웨이 등 진입 방식이 다양합니다." },
+            "University of Utah": { k:"유타대학교", found:"1850년", city:"유타 솔트레이크시티", students:"약 33,000명", majors:["컴퓨터과학","게임개발","경영학","의생명","무용·영화"], desc:"게임 개발 전공 전미 최상위권으로 유명한 유타주 플래그십. 인천 송도에 아시아 캠퍼스를 운영해 한국 학생에게 친숙합니다." },
+            "Oregon State University": { k:"오리건주립대학교", found:"1868년", city:"오리건 코밸리스", students:"약 36,000명", majors:["공학","컴퓨터과학","임학·해양","경영학","농업과학"], desc:"미국 INTO 패스웨이의 출발점이 된 학교. 캠퍼스 내 INTO 센터의 오랜 운영 노하우로 국제학생 정착 지원이 체계적입니다." },
+            "University of Massachusetts Boston": { k:"매사추세츠대학교 보스턴", found:"1964년", city:"매사추세츠 보스턴", students:"약 16,000명", majors:["경영학","간호학","컴퓨터과학","심리학","교육학"], desc:"보스턴 항이 내려다보이는 도심 주립. 미국 최대 대학 도시 보스턴에서 학비 부담을 낮춰 시작할 수 있는 실속형 선택지입니다." }
+        };
+        function uniInfo(name) { return UNI_INFO[name] || null; }
+
+        // 대학 공식 홈페이지 URL. 미등록 대학은 EducationUSA로 연결
+        function officialSchoolUrl(name) {
+            const ug = UG_UNIS.find(u => u.n === name);
+            return (ug && ug.url) || EDU_USA_URL;
+        }
+
+        function showUniDetail(name) {
+            const info = uniInfo(name);
+            if (!info) return;
+            const ug = UG_UNIS.find(u => u.n === name); // 경로 데이터 (있는 경우)
+            let m = document.getElementById('uni-modal');
+            if (!m) { m = document.createElement('div'); m.id = 'uni-modal'; document.body.appendChild(m); }
+            const routes = [];
+            if (ug) {
+                if (ug.grp === 'direct') routes.push(`<span class="route-badge bg-gray-100 text-gray-600"><i class="fa-solid fa-arrow-right text-[10px]"></i> ${t('routeDirect')}</span>`);
+                if (ug.pw) routes.push(`<span class="route-badge bg-blue-50 text-royal"><i class="fa-solid fa-layer-group text-[10px]"></i> ${tr(ug.pw)}</span>`);
+                if (ug.tf) routes.push(`<span class="route-badge bg-[#FDECEF] text-usred"><i class="fa-solid fa-arrows-turn-right text-[10px]"></i> ${t('routeTf2')}</span>`);
+            }
+            m.innerHTML = `
+                <div class="fixed inset-0 z-[100]">
+                    <div class="absolute inset-0 bg-black/70" onclick="closeUniDetail()"></div>
+                    <div class="relative max-w-2xl mx-auto mt-8 md:mt-16 mb-8 mx-4 sm:mx-auto bg-white rounded-3xl shadow-2xl max-h-[85vh] overflow-y-auto">
+                        <div class="bg-ink2 text-white p-8 md:p-10 relative">
+                            <button onclick="closeUniDetail()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+                            ${ug ? `<span class="inline-block py-1 px-3 border border-gray-500 rounded-full text-[11px] font-semibold tracking-widest text-gray-300 mb-4 uppercase">${t('rankBadge')(ug.rank)}</span>` : ''}
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tight">${name}</h3>
+                            <p class="text-gray-400 mt-1">${t('modalSubName')(info.k)}</p>
+                        </div>
+                        <div class="p-8 md:p-10">
+                            <div class="grid grid-cols-3 gap-3 mb-7 text-center">
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">${t('statFounded')}</p><p class="text-[14px] font-bold text-black">${tr(info.found)}</p></div>
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">${t('statCity')}</p><p class="text-[14px] font-bold text-black leading-tight">${tr(info.city)}</p></div>
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">${t('statStudents')}</p><p class="text-[14px] font-bold text-black">${tr(info.students)}</p></div>
+                            </div>
+                            <p class="text-[15px] text-gray-700 leading-relaxed mb-7">${tr(info.desc)}</p>
+                            <p class="text-[13px] font-semibold text-ink2 mb-2.5">${t('topMajors')}</p>
+                            <div class="flex flex-wrap gap-2 mb-7">${info.majors.map(mj => `<span class="info-badge text-[13px]">${tr(mj)}</span>`).join('')}</div>
+                            ${routes.length ? `<p class="text-[13px] font-semibold text-ink2 mb-2.5">${t('ugRoutesLabel')}</p><div class="flex flex-wrap gap-2 mb-3">${routes.join('')}</div>` : ''}
+                            ${ug ? `<p class="text-[13px] text-mute leading-relaxed mb-7">${tr(ug.note)}</p>` : '<div class="mb-4"></div>'}
+                            <div class="flex flex-col gap-2.5">
+                                <a href="${ug ? ug.url : officialSchoolUrl(name)}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3.5 px-4 w-full flex items-center justify-center gap-2 text-[15px]"><i class="fa-solid fa-globe text-xs"></i> ${t('visitOfficial')}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            m.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeUniDetail() {
+            const m = document.getElementById('uni-modal');
+            if (m) { m.style.display = 'none'; m.innerHTML = ''; }
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeUniDetail(); });
+
+        // ── 진단 질문 (학부 · 3개 경로) ──────────────────────────────
+        const ugQuestions = [
+            {
+                key: "status",
+                q: "현재 학업 상태를 알려주세요.",
+                options: [
+                    { label: "고등학교 2학년 재학 · 수료 예정", value: "hs2" },
+                    { label: "고3 재학 · 졸업 예정", value: "hs3" },
+                    { label: "고교 졸업 (검정고시 포함)", value: "grad" },
+                    { label: "해외고 · 국제학교 (AP · IB 등)", value: "intl" }
+                ]
+            },
+            {
+                key: "grades",
+                q: "고교 내신 성적대는 어느 정도인가요?",
+                options: [
+                    { label: "상위권 (1 ~ 2등급대)", value: "top" },
+                    { label: "중상위권 (3 ~ 4등급대)", value: "mid" },
+                    { label: "중위권 이하 (5등급대~)", value: "low" },
+                    { label: "검정고시 · 산출 어려움", value: "etc" }
+                ],
+                note: "※ Direct는 내신·에세이·활동을 종합 평가하고, 패스웨이·CC는 성적 기준이 상대적으로 낮습니다."
+            },
+            {
+                key: "sat",
+                q: "SAT · ACT 준비 상황을 알려주세요.<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ 2026-27 기준 아이비리그·MIT·스탠퍼드 등 최상위권은 SAT/ACT 필수입니다. 패스웨이·CC 편입은 필요하지 않습니다.</span>",
+                options: [
+                    { label: "SAT 1400+ · ACT 30+ 보유", value: "high" },
+                    { label: "SAT 1200~1390대 보유", value: "mid" },
+                    { label: "준비 중 · 응시 예정", value: "prep" },
+                    { label: "없음 · 계획 없음", value: "none" }
+                ]
+            },
+            {
+                key: "english",
+                q: "공인 영어 성적(TOEFL 등)이 있으신가요?<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ Direct는 보통 TOEFL 80~100+, 패스웨이는 55~79 수준부터 지원 가능합니다. 세부 기준은 학교마다 다릅니다.</span>",
+                options: [
+                    { label: "TOEFL 80+ (IELTS 6.5+)", value: "high" },
+                    { label: "TOEFL 60 ~ 79 (IELTS 5.5 ~ 6.0)", value: "mid" },
+                    { label: "아직 없음 / 준비 전", value: "none" },
+                    { label: "기타 (IELTS · Duolingo · PTE 환산)", value: "__other__" }
+                ],
+                bandOf: s => s >= 80 ? "high" : (s >= 60 ? "mid" : "none")
+            },
+            {
+                key: "field",
+                q: "희망하는 전공 계열을 선택해주세요.",
+                options: [
+                    { label: "경영 · 경제 · 금융", value: "biz" },
+                    { label: "공학 (기계 · 전자 · 토목 등)", value: "eng" },
+                    { label: "컴퓨터 · 데이터 · AI", value: "cs" },
+                    { label: "사회과학 · 미디어 · 국제관계", value: "soc" },
+                    { label: "자연과학 · 수학", value: "sci" },
+                    { label: "인문 · 어학 · 예술", value: "arts" },
+                    { label: "찾는 계열이 없어요 · 특수 전공 직접 입력", value: "__custommajor__" }
+                ]
+            },
+            {
+                key: "budget",
+                q: "연간 유학 예산(학비+생활비)은 어느 정도인가요?",
+                options: [
+                    { label: "연 $70,000 이상 (사립 포함 자유)", value: "high" },
+                    { label: "연 $45,000 ~ 70,000 (주립 중심)", value: "mid" },
+                    { label: "학비 절감이 중요 (연 $45,000 이하)", value: "low" }
+                ],
+                note: "※ 사립 학비 연 $55,000~68,000+, 주립 $30,000~50,000, CC $10,000~15,000 수준입니다 (생활비 별도)."
+            },
+            {
+                key: "target",
+                q: "진학에서 가장 중요하게 생각하는 기준은 무엇인가요?",
+                options: [
+                    { label: "최상위권 도전 (Top 30)", value: "top" },
+                    { label: "랭킹과 합격 안정성의 균형", value: "balance" },
+                    { label: "빠른 적응 · 안정적인 진학", value: "fast" }
+                ]
+            }
+        ];
+
+        // ── 플로우 ───────────────────────────────────────────────────
+        function goHome() { history.replaceState(null, '', location.pathname); location.reload(); }
+        /* 결과·진단 화면에서 홈 섹션 앵커로 이동해야 할 때: 새로고침 후 해시 유지 */
+        function goHomeThen(anchor) {
+            const home = document.getElementById('home-extra');
+            if (home && home.style.display !== 'none') {
+                document.getElementById(anchor).scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            history.replaceState(null, '', location.pathname + '#' + anchor);
+            location.reload();
+        }
+
+        // ── 결과 링크 공유 · 복원 ────────────────────────────────────
+        function buildResultLink() {
+            return location.origin + location.pathname + '#p=' + encodeURIComponent(JSON.stringify({ t: 'ug', s: currentState }));
+        }
+        function fallbackCopy(text) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+        }
+        function copyResultLink(btnEl) {
+            const link = buildResultLink();
+            const btn = btnEl || document.getElementById('share-btn');
+            const done = () => {
+                if (!btn) return;
+                const orig = btn.innerHTML;
+                btn.innerHTML = t('copied');
+                setTimeout(() => { btn.innerHTML = orig; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(done).catch(() => { fallbackCopy(link); done(); });
+            } else { fallbackCopy(link); done(); }
+        }
+        function shareBtnHTML() {
+            return `
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2">
+                    <button onclick="openConsultForm()" class="pill-btn bg-gold hover:bg-gold-deep text-black px-6 py-3 text-[15px] font-semibold inline-flex items-center gap-2 w-full sm:w-auto justify-center"><i class="fa-solid fa-comments text-xs"></i> ${t('resultCta')}</button>
+                    <button id="share-btn" onclick="copyResultLink()" class="pill-btn bg-royal hover:bg-[#082548] text-white px-6 py-3 text-[15px] font-semibold inline-flex items-center gap-2 w-full sm:w-auto justify-center"><i class="fa-solid fa-link text-xs"></i> ${t('resultCopy')}</button>
+                    <button onclick="goHome()" class="pill-btn bg-transparent border border-gray-600 text-gray-300 hover:border-gold hover:text-gold px-6 py-3 text-[15px] font-medium inline-flex items-center gap-2 w-full sm:w-auto justify-center">${t('resultRestart')} <i class="fa-solid fa-rotate-right text-xs"></i></button>
+                </div>
+                <p class="text-[12px] text-gray-500 mt-4">${t('shareHint')}</p>`;
+        }
+
+        // ── 무료 상담 신청 (Tally 팝업) — 진단 결과를 히든 필드로 자동 전달 ──
+        const TALLY_FORM_ID = '0Qz7E6';
+        function openConsultForm() {
+            const titleEl = document.querySelector('#result-section .text-gold');
+            const result = titleEl
+                ? titleEl.textContent.replace(/"/g, '').trim()
+                : '학부 진단';
+            const fields = { source: 'us', country: '미국', result: result, link: buildResultLink() };
+            if (window.Tally) {
+                window.Tally.openPopup(TALLY_FORM_ID, { layout: 'modal', width: Math.min(640, window.innerWidth - 32), hiddenFields: fields });
+            } else {
+                const q = Object.entries(fields).map(([k, v]) => k + '=' + encodeURIComponent(v)).join('&');
+                window.open('https://tally.so/r/' + TALLY_FORM_ID + '?' + q, '_blank', 'noopener');
+            }
+        }
+
+        function activeQuestions() { return ugQuestions; }
+
+        function startConsulting() {
+            currentState = {}; step = 0; flowStack = [];
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('home-extra').style.display = 'none';
+            document.getElementById('result-section').style.display = 'none';
+            document.getElementById('chat-history').innerHTML = '';
+            const chatSection = document.getElementById('chat-section');
+            chatSection.style.display = 'flex';
+            chatSection.classList.add('fade-in-up');
+            addChatBubble('ai', t('introUg'));
+            setTimeout(askQuestion, 800);
+            window.scrollTo({ top: 0 });
+        }
+
+        function addChatBubble(sender, text) {
+            const history = document.getElementById('chat-history');
+            const wrap = document.createElement('div');
+            wrap.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} fade-in-up`;
+            let bubbleHTML = '';
+            if (sender === 'ai') {
+                bubbleHTML = `
+                    <div class="flex gap-3 max-w-[90%] md:max-w-[80%]">
+                        <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-black shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="chat-bubble-ai px-5 py-3.5 text-[15px] leading-relaxed shadow-sm">${text}</div>
+                    </div>`;
+            } else {
+                bubbleHTML = `<div class="chat-bubble-user px-5 py-3.5 text-[15px] leading-relaxed shadow-sm max-w-[85%] font-medium">${text}</div>`;
+            }
+            wrap.innerHTML = bubbleHTML;
+            history.appendChild(wrap);
+            history.scrollTo({ top: history.scrollHeight, behavior: 'smooth' });
+        }
+
+        function askQuestion() {
+            const qs = activeQuestions();
+            if (step < qs.length) {
+                const q = qs[step];
+                // 뒤로가기용 스냅샷. 이 질문을 답하기 직전 상태 저장
+                flowStack.push({ step, state: { ...currentState }, childCount: document.getElementById('chat-history').children.length });
+                addChatBubble('ai', tr(q.q));
+                const c = document.getElementById('options-container');
+                c.innerHTML = '';
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = tr(opt.label);
+                    btn.onclick = () => handleAnswer(opt.value, tr(opt.label));
+                    c.appendChild(btn);
+                });
+                if (q.note) {
+                    const note = document.createElement('p');
+                    note.className = 'text-[13px] text-gray-500 leading-relaxed text-center sm:col-span-2 mt-1';
+                    note.innerText = tr(q.note);
+                    c.appendChild(note);
+                }
+                appendBackButton(c);
+            } else {
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', t('analyzing'));
+                setTimeout(showResult, 1800);
+            }
+        }
+
+        // 옵션 하단에 눈에 띄지 않게 '이전 질문' 버튼을 붙인다 (첫 질문에는 없음)
+        function appendBackButton(c) {
+            if (flowStack.length < 2) return;
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-500 hover:text-gold border border-transparent hover:border-[#3d3d40] py-2.5 px-4 font-medium text-[13px] w-full sm:col-span-2 mt-1 inline-flex items-center justify-center gap-2';
+            back.innerHTML = t('backPrev');
+            back.onclick = goBackQuestion;
+            c.appendChild(back);
+        }
+
+        function goBackQuestion() {
+            if (flowStack.length < 2) return;
+            flowStack.pop();                       // 현재 질문 스냅샷 제거
+            const prev = flowStack.pop();          // 이전 질문 스냅샷 (askQuestion이 다시 push)
+            const history = document.getElementById('chat-history');
+            while (history.children.length > prev.childCount) history.lastElementChild.remove();
+            currentState = { ...prev.state };
+            step = prev.step;
+            document.getElementById('options-container').innerHTML = '';
+            askQuestion();
+        }
+
+        function handleAnswer(value, label) {
+            if (value === '__other__') {
+                addChatBubble('user', label);
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', t('otherTestPrompt'));
+                setTimeout(renderTestTypeChoice, 500);
+                return;
+            }
+            if (value === '__custommajor__') {
+                addChatBubble('user', label);
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', t('customPrompt'));
+                setTimeout(renderCustomMajorInput, 500);
+                return;
+            }
+            addChatBubble('user', label);
+            document.getElementById('options-container').innerHTML = '';
+            const q = activeQuestions()[step];
+            currentState[q.key] = value;
+            step++;
+            setTimeout(askQuestion, 600);
+        }
+
+        // ── 특수 전공 직접 입력 → 가장 가까운 계열 매칭 ─────────────
+        const CUSTOM_FIELD_MAP = [
+            ['biz',  ['경영', '매니지먼트', '마케팅', '회계', '재무', '금융', '경제', '무역', '물류', '호텔', '관광', '스포츠', '비즈니스', 'mba', 'business', 'management', 'marketing', 'finance', 'account', 'hospitality', 'tourism', 'sport', 'logistics']],
+            ['cs',   ['컴퓨터', '소프트', '프로그래', '코딩', '게임', '인공지능', '데이터', '보안', '정보', 'it', 'ai', 'computer', 'software', 'data', 'cyber', 'game']],
+            ['eng',  ['공학', '기계', '전자', '전기', '토목', '항공우주', '자동차', '로봇', '화공', '재료', '조선', '메카', 'engineering', 'mechanical', 'electrical', 'civil', 'aerospace', 'robot']],
+            ['sci',  ['수학', '물리', '화학', '생물', '생명', '통계', '천문', '지질', '간호', '약학', '치료', '보건', '의예', '수의', 'math', 'physics', 'chemi', 'biolog', 'statistic', 'nursing', 'pharma', 'therapy', 'health']],
+            ['soc',  ['미디어', '언론', '방송', '신문', '국제', '정치', '외교', '사회', '심리', '법', '범죄', '커뮤니케이션', '광고', '홍보', '교육', 'media', 'politic', 'international', 'psycho', 'law', 'communication', 'sociology', 'education']],
+            ['arts', ['미술', '디자인', '음악', '예술', '영문', '어학', '언어', '역사', '철학', '문학', '패션', '건축', '영화', '연기', '공연', '애니', 'art', 'design', 'music', 'fashion', 'film', 'architec', 'history', 'literature', 'language', 'drama', 'animation']]
+        ];
+        function mapCustomMajorToField(text) {
+            const t = text.toLowerCase();
+            for (const [f, keys] of CUSTOM_FIELD_MAP) if (keys.some(k => t.includes(k))) return f;
+            return 'biz'; // 매칭 실패 시 개설 폭이 가장 넓은 경영 계열로 안내
+        }
+        function renderCustomMajorInput() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            const wrap = document.createElement('div');
+            wrap.className = 'sm:col-span-2 flex flex-col gap-3';
+            wrap.innerHTML = `
+                <input id="customMajorInput" type="text" maxlength="40" placeholder="${t('customPlaceholder')}"
+                    class="bg-[#2d2d2f] text-white border border-[#3d3d40] rounded-2xl py-3.5 px-5 text-[15px] focus:outline-none focus:border-gold w-full placeholder-gray-500" />
+                <div class="flex gap-3">
+                    <button id="customMajorBtn" class="pill-btn bg-gold hover:bg-gold-deep text-black py-3.5 px-4 font-semibold text-[15px] flex-1">${t('customAnalyze')}</button>
+                    <button id="customMajorBack" class="pill-btn bg-[#2d2d2f] text-gray-300 border border-[#3d3d40] hover:bg-[#3d3d40] py-3.5 px-5 font-medium text-[15px]">${t('backShort')}</button>
+                </div>`;
+            c.appendChild(wrap);
+            const submit = () => {
+                const input = document.getElementById('customMajorInput');
+                const raw = input.value.trim().replace(/[<>&"']/g, '');
+                if (!raw) { input.value = ''; input.placeholder = t('customEmpty'); return; }
+                const f = mapCustomMajorToField(raw);
+                currentState.customMajor = raw;
+                currentState.field = f;
+                addChatBubble('user', raw);
+                addChatBubble('ai', t('customMatched')(raw, tr(fieldMajors[f].label)));
+                document.getElementById('options-container').innerHTML = '';
+                step++;
+                setTimeout(askQuestion, 1100);
+            };
+            document.getElementById('customMajorBtn').onclick = submit;
+            document.getElementById('customMajorInput').addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+            document.getElementById('customMajorInput').focus();
+            document.getElementById('customMajorBack').onclick = () => {
+                c.innerHTML = '';
+                activeQuestions()[step].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = tr(opt.label);
+                    btn.onclick = () => handleAnswer(opt.value, tr(opt.label));
+                    c.appendChild(btn);
+                });
+                appendBackButton(c);
+            };
+        }
+
+        // ── 영어 점수 환산기 (IELTS · Duolingo · PTE → TOEFL 밴드) ──
+        function renderTestTypeChoice() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            [['IELTS Academic (0~9.0)', 'IELTS'], ['Duolingo English Test (10~160)', 'DET'], ['PTE Academic (10~90)', 'PTE']].forEach(([lbl, type]) => {
+                const b = document.createElement('button');
+                b.className = OPT_BTN_CLASS;
+                b.innerText = lbl;
+                b.onclick = () => renderScoreInput(type);
+                c.appendChild(b);
+            });
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-400 border border-[#3d3d40] hover:bg-[#2d2d2f] py-3.5 px-4 font-medium text-[14px] md:text-[15px] w-full sm:col-span-2';
+            back.innerText = t('backToScores');
+            back.onclick = () => {
+                c.innerHTML = '';
+                activeQuestions()[step].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = tr(opt.label);
+                    btn.onclick = () => handleAnswer(opt.value, tr(opt.label));
+                    c.appendChild(btn);
+                });
+                appendBackButton(c);
+            };
+            c.appendChild(back);
+        }
+
+        const TEST_RANGE = { IELTS: [0, 9], DET: [10, 160], PTE: [10, 90] };
+        function renderScoreInput(testType) {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            const [min, max] = TEST_RANGE[testType];
+            const wrap = document.createElement('div');
+            wrap.className = 'sm:col-span-2 flex flex-col gap-3';
+            wrap.innerHTML = `
+                <input id="engScoreInput" type="number" inputmode="decimal" min="${min}" max="${max}" step="${testType === 'IELTS' ? '0.5' : '1'}"
+                    placeholder="${t('scorePh')(testType, min, max)}"
+                    class="bg-[#2d2d2f] text-white border border-[#3d3d40] rounded-2xl py-3.5 px-5 text-[15px] focus:outline-none focus:border-gold w-full placeholder-gray-500" />
+                <div class="flex gap-3">
+                    <button id="engConvertBtn" class="pill-btn bg-gold hover:bg-gold-deep text-black py-3.5 px-4 font-semibold text-[15px] flex-1">${t('convertBtn')}</button>
+                    <button id="engBackBtn" class="pill-btn bg-[#2d2d2f] text-gray-300 border border-[#3d3d40] hover:bg-[#3d3d40] py-3.5 px-5 font-medium text-[15px]">${t('backShort')}</button>
+                </div>`;
+            c.appendChild(wrap);
+            document.getElementById('engConvertBtn').onclick = () => convertEnglish(testType);
+            document.getElementById('engBackBtn').onclick = renderTestTypeChoice;
+            document.getElementById('engScoreInput').focus();
+        }
+
+        function convertEnglish(testType) {
+            const input = document.getElementById('engScoreInput');
+            const s = parseFloat(input.value);
+            const [min, max] = TEST_RANGE[testType];
+            if (isNaN(s) || s < min || s > max) { input.value = ''; input.placeholder = t('scoreInvalid')(min, max); return; }
+            const toefl = testType === 'IELTS' ? ieltsToToefl(s) : testType === 'DET' ? detToToefl(s) : pteToToefl(s);
+            const q = activeQuestions()[step];
+            const band = q.bandOf(toefl);
+            const bandLabel = tr(q.options.find(o => o.value === band).label);
+            addChatBubble('user', t('scoreUser')(testType, s));
+            addChatBubble('ai', t('scoreConverted')(testType, s, toefl, bandLabel));
+            document.getElementById('options-container').innerHTML = '';
+            currentState[q.key] = band;
+            currentState.toeflEq = toefl;
+            step++;
+            setTimeout(askQuestion, 900);
+        }
+
+        // ── 공통 결과 파츠 ───────────────────────────────────────────
+        function ctaHTML(title, sub) {
+            return `
+                <div class="photo-header py-28 px-4 text-center" style="background-image:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.78)),url('assets/img/students-study.jpg')">
+                    <div class="max-w-3xl mx-auto">
+                        <h2 class="text-4xl font-bold tracking-tighter2 mb-6 text-white">${title}</h2>
+                        <p class="text-lg text-gray-200 mb-10 leading-relaxed">${sub}</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <button onclick="openConsultForm()" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold w-full sm:w-auto shadow-lg shadow-yellow-500/30 transition-all transform hover:-translate-y-1"><i class="fa-solid fa-comments text-sm mr-2"></i>${t('resultCta')}</button>
+                            <button onclick="copyResultLink(this)" class="pill-btn bg-white/10 border border-white/40 text-white hover:bg-white/20 px-8 py-4 text-lg font-medium w-full sm:w-auto backdrop-blur-sm"><i class="fa-solid fa-link text-sm mr-2"></i>${t('resultCopy')}</button>
+                            <button onclick="goHome()" class="pill-btn bg-white/10 border border-white/40 text-white hover:bg-white/20 px-8 py-4 text-lg font-medium w-full sm:w-auto backdrop-blur-sm">${t('resultRestart')}</button>
+                        </div>
+                        <p class="text-[13px] text-gray-300 mt-10">${t('ctaFoot')}</p>
+                    </div>
+                </div>`;
+        }
+
+        function boardHTML() {
+            const list = [...usBoards.ug, ...usBoards.common];
+            return `
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('boardTitle')}</h3>
+                            <p class="text-lg text-mute max-w-2xl mx-auto leading-relaxed">${t('boardSubUg')}</p>
+                        </div>
+                        <div class="space-y-3 mb-10">
+                            ${list.map(a => `
+                                <a href="${a.url}" target="_blank" rel="noopener"
+                                   class="flex items-center justify-between gap-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 transition group">
+                                    <span class="text-[15px] text-gray-700 group-hover:text-black text-left flex items-center gap-3">
+                                        <i class="fa-regular fa-file-lines text-royal shrink-0"></i>${tr(a.title)}
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right text-royal text-sm shrink-0 group-hover:translate-x-1 transition-transform"></i>
+                                </a>`).join('')}
+                        </div>
+                        <div class="text-center">
+                            <a href="${EDU_USA_URL}" target="_blank" rel="noopener" class="pill-btn bg-ink2 hover:bg-black text-white px-8 py-4 text-lg font-semibold inline-flex items-center gap-2">
+                                ${t('boardBtn')} <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function footerHTML() {
+            return `
+                <footer class="bg-[#0b0b0c] py-12 text-center border-t border-gray-900">
+                    <p class="text-white font-bold text-[15px] mb-4"><i class="fa-solid fa-map-location-dot text-gold mr-2"></i>US Study Guide</p>
+                    <p class="text-xs text-gray-500 font-medium mb-2">${t('footerCopy')}</p>
+                    <p class="text-[11px] text-gray-600 leading-relaxed max-w-xl mx-auto px-4">${t('footerDisclaimer')}</p>
+                </footer>`;
+        }
+
+        // ── 결과: 경로 판정 ──────────────────────────────────────────
+        // 'direct' | 'pathway' | 'transfer' | 'mix'(패스웨이+편입 비교)
+        function ugRouteDecision(s) {
+            const engHigh = s.english === 'high';
+            const satReady = s.sat === 'high' || s.sat === 'mid';
+            const canDirect = s.grades === 'top' && engHigh;
+            let key;
+            if (s.budget === 'low') key = 'transfer';
+            else if (canDirect && (satReady || s.sat === 'prep')) key = 'direct';
+            else if (s.target === 'top') key = 'transfer';
+            else if (s.target === 'fast') key = 'pathway';
+            else if (s.grades === 'top' || s.grades === 'mid') key = 'pathway';
+            else key = 'mix';
+            const titles = { direct: t('dirTitle'), pathway: t('pwTitle'), transfer: t('tfTitle'), mix: t('mixTitle') };
+            const subs = { direct: t('dirSubR'), pathway: t('pwSubR'), transfer: t('tfSubR'), mix: t('mixSubR') };
+            return { key, title: titles[key], sub: subs[key] };
+        }
+
+        function ugRouteReason(s, key) {
+            let reason;
+            if (key === 'direct') reason = t('rDirect');
+            else if (key === 'transfer') reason = s.budget === 'low' ? t('rTfBudget') : t('rTfTop');
+            else if (key === 'pathway') reason = s.target === 'fast' ? t('rPwFast') : t('rPwFit');
+            else reason = t('rMix');
+            if (s.status === 'hs2') reason += ' ' + t('hs2Add');
+            if (s.english === 'none') reason += ' ' + t('engNoneAdd');
+            if (s.sat === 'none' && key === 'direct') reason += ' ' + t('satNoneAdd');
+            return reason;
+        }
+
+        // 계열 → 대학 우세전공 매칭 키워드 (행에 전공명 표시용)
+        const FIELD_MAJOR_KEYS = {
+            biz:  ['경영', '회계', '재무', '마케팅', '경제', '금융', '비즈니스', '호스피탈리티', '국제경영'],
+            eng:  ['기계', '전기', '전자', '토목', '항공', '화학공학', '공학', '바이오공학', '농공학'],
+            cs:   ['컴퓨터', '데이터', '인공지능', '소프트웨어', '사이버', 'EECS', '정보기술', '게임'],
+            soc:  ['국제', '정치', '사회', '미디어', '심리', '법', '언론', '저널리즘', '정책', '커뮤니케이션', '공공'],
+            sci:  ['수학', '물리', '화학', '생물', '생명', '통계', '자연과학', '인지과학', '환경', '의생명', '의예', '수의'],
+            arts: ['영문', '언어', '역사', '철학', '예술', '디자인', '건축', '음악', '영화', '교육', '무용']
+        };
+        function fieldMajorsOf(u) {
+            const info = uniInfo(u.n);
+            const keys = FIELD_MAJOR_KEYS[currentState.field] || [];
+            if (!info || !keys.length) return [];
+            return info.majors.filter(m => keys.some(k => m.includes(k))).slice(0, 3);
+        }
+
+        // ── 학부 결과 ────────────────────────────────────────────────
+        const GRP_LABEL = { direct: 'Direct 전형 중심', sl: 'Shorelight 제휴', into: 'INTO 제휴', kaplan: 'Kaplan 제휴', own: '대학 직영 패스웨이' };
+        let ugFilter = 'all';
+
+        function ugCardHTML(u) {
+            const hasInfo = !!uniInfo(u.n);
+            // 선택 계열과 매칭되는 전공 우선, 없으면 학교 우세전공 상위 3개 표시
+            let rel = fieldMajorsOf(u);
+            if (!rel.length && hasInfo) rel = uniInfo(u.n).majors.slice(0, 3);
+            const routes = [];
+            if (u.grp === 'direct') routes.push(`<span class="route-badge bg-gray-100 text-gray-600"><i class="fa-solid fa-arrow-right text-[10px]"></i> ${t('routeDirect')}</span>`);
+            if (u.pw) routes.push(`<span class="route-badge bg-blue-50 text-royal"><i class="fa-solid fa-layer-group text-[10px]"></i> ${tr(u.pw)}</span>`);
+            if (u.tf) routes.push(`<span class="route-badge bg-[#FDECEF] text-usred"><i class="fa-solid fa-arrows-turn-right text-[10px]"></i> ${t('routeTf')}</span>`);
+            return `
+                <div class="apple-card px-5 py-3.5 md:px-6 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-4">
+                    <div class="flex-grow min-w-0 ${hasInfo ? 'cursor-pointer' : ''}" ${hasInfo ? `onclick="showUniDetail(this.dataset.u)" data-u="${u.n.replace(/"/g, '&quot;')}"` : ''}>
+                        <div class="flex flex-wrap items-baseline gap-x-2">
+                            <h4 class="text-[15px] font-bold text-black tracking-tight leading-snug">${u.n}</h4>
+                            <span class="text-mute text-[12px] font-medium">${t('uniSub')(u.k, u.rank)}</span>
+                        </div>
+                        ${rel.length ? `<p class="text-[13px] text-royal font-semibold mt-1"><i class="fa-solid fa-graduation-cap mr-1.5 text-[11px]"></i>${rel.map(tr).join(' · ')}</p>` : ''}
+                        <div class="flex flex-wrap gap-1.5 mt-1.5">${routes.join('')}</div>
+                    </div>
+                    <div class="shrink-0">
+                        ${hasInfo ? `<button onclick="showUniDetail(this.dataset.u)" data-u="${u.n.replace(/"/g, '&quot;')}" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5 w-full sm:w-auto justify-center">${t('schoolInfo')} <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i></button>` : `<a href="${u.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5 w-full sm:w-auto justify-center">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>`}
+                    </div>
+                </div>`;
+        }
+
+        // 게시판식 목록. 정렬(US News 랭킹 / 이름) + 페이지네이션
+        let ugSort = 'rank', ugPage = 1;
+        const UG_PAGE_SIZE = 8;
+
+        function renderUgCards(filter) { ugFilter = filter; ugPage = 1; drawUgList(); }
+        function setUgSort(s) { ugSort = s; ugPage = 1; drawUgList(); }
+        function setUgPage(p) {
+            ugPage = p; drawUgList();
+            const el = document.getElementById('ug-list-top');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function drawUgList() {
+            document.querySelectorAll('.filter-chip[data-f]').forEach(ch => ch.classList.toggle('active', ch.dataset.f === ugFilter));
+            document.querySelectorAll('.filter-chip[data-s]').forEach(ch => ch.classList.toggle('active', ch.dataset.s === ugSort));
+            const list = UG_UNIS
+                .filter(u => ugFilter === 'all' ? true : ugFilter === 'pw' ? !!u.pw : ugFilter === 'tf' ? u.tf : u.grp === 'direct')
+                .sort((a, b) => ugSort === 'name' ? a.n.localeCompare(b.n) : ugSort === 'kname' ? a.k.localeCompare(b.k, 'ko') : a.rank - b.rank);
+            const pages = Math.max(1, Math.ceil(list.length / UG_PAGE_SIZE));
+            if (ugPage > pages) ugPage = pages;
+            const slice = list.slice((ugPage - 1) * UG_PAGE_SIZE, ugPage * UG_PAGE_SIZE);
+            document.getElementById('ug-cards').innerHTML = slice.map(ugCardHTML).join('');
+            document.getElementById('ug-count').innerText = t('countLine')(list.length, ugPage, pages);
+            const pager = document.getElementById('ug-pager');
+            if (pager) {
+                pager.innerHTML = pages <= 1 ? '' : [
+                    `<button onclick="setUgPage(${Math.max(1, ugPage - 1)})" class="filter-chip ${ugPage === 1 ? 'opacity-40 pointer-events-none' : ''}" aria-label="${t('prevPage')}"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>`,
+                    ...Array.from({ length: pages }, (_, i) => `<button onclick="setUgPage(${i + 1})" class="filter-chip ${ugPage === i + 1 ? 'active' : ''}">${i + 1}</button>`),
+                    `<button onclick="setUgPage(${Math.min(pages, ugPage + 1)})" class="filter-chip ${ugPage === pages ? 'opacity-40 pointer-events-none' : ''}" aria-label="${t('nextPage')}"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>`
+                ].join('');
+            }
+        }
+
+        function showResult() {
+            document.getElementById('chat-section').style.display = 'none';
+            const resultSection = document.getElementById('result-section');
+            resultSection.style.display = 'block';
+            resultSection.classList.add('fade-in-up');
+
+            const d = ugRouteDecision(currentState);
+            const rec = d.key; // 'direct' | 'pathway' | 'transfer' | 'mix'
+            const reason = ugRouteReason(currentState, rec);
+            const fm = fieldMajors[currentState.field] || null;
+            const cm = currentState.customMajor || null; // 직접 입력한 특수 전공명
+            const ring = k => (rec === k || (rec === 'mix' && (k === 'pathway' || k === 'transfer'))) ? 'ring-2 ring-gold' : '';
+            const recChip = k => (rec === k || (rec === 'mix' && (k === 'pathway' || k === 'transfer'))) ? `<span class="route-badge bg-gold text-black mb-4">${t('recChip')}</span>` : `<span class="route-badge bg-gray-100 text-gray-500 mb-4">${t('infoChip')}</span>`;
+
+            let html = `
+                <div class="photo-header pt-24 pb-16 px-4" style="background-image:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),url('assets/img/quad-header.jpg')">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <span class="inline-block py-1 px-3 border border-gray-500 rounded-full text-xs font-semibold tracking-widest text-gray-200 mb-6 uppercase">${t('ugBadge')}</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter2 mb-6 leading-tight">
+                            ${t('resultHeadUg')(d.title)}
+                        </h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-6">${d.sub}</p>
+                        <div class="bg-[#1d1d1f] rounded-2xl p-6 text-left border border-[#2d2d2f] max-w-2xl mx-auto mb-8">
+                            <p class="text-sm text-gray-300 leading-relaxed"><strong class="text-white">${t('diagReason')}</strong> ${reason}</p>
+                        </div>
+                        ${shareBtnHTML()}
+                    </div>
+                </div>
+
+                ${fm ? `
+                <div class="section-light pt-16 pb-4 px-4">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="apple-card p-8 md:p-10">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="route-badge bg-gold text-black">${cm ? t('chipInput') : t('chipField')}</span>
+                                <h3 class="text-2xl font-bold text-black tracking-tight">${cm ? t('fmTitleCustom')(cm, tr(fm.label)) : t('fmTitleField')(tr(fm.label))}</h3>
+                            </div>
+                            <p class="text-mute text-[15px] mb-6 leading-relaxed">${cm
+                                ? t('fmDescCustom')(cm, tr(fm.label))
+                                : t('fmDescField')}</p>
+                            <div class="flex flex-wrap gap-2.5">
+                                ${fm.majors.map(m => `<span class="info-badge text-[14px] py-2"><i class="fa-solid fa-graduation-cap text-royal mr-2 text-xs"></i>${tr(m)}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>` : ''}
+
+                <div class="section-light py-20 px-4">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-14">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('routes3Title')}</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('routes3Sub')}</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="apple-card p-8 flex flex-col ${ring('direct')}">
+                                ${recChip('direct')}
+                                <h4 class="text-xl font-bold text-black mb-1">${t('dirCardTitle')}</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">${t('dirCardSub')}</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed flex-grow">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('dirLi1')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('dirLi2')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('dirLi3')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-1 text-xs shrink-0"></i>${t('dirLi4')}</li>
+                                </ul>
+                                <div class="mt-5 pt-4 border-t border-gray-100 text-[13px] text-mute leading-relaxed">${t('dirMeta')}</div>
+                            </div>
+                            <div class="apple-card p-8 flex flex-col ${ring('pathway')}">
+                                ${recChip('pathway')}
+                                <h4 class="text-xl font-bold text-black mb-1">${t('pwCardTitle')}</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">${t('pwCardSub')}</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed flex-grow">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('pwLi1')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('pwLi2')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('pwLi3')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-1 text-xs shrink-0"></i>${t('pwLi4')}</li>
+                                </ul>
+                                <div class="mt-5 pt-4 border-t border-gray-100 text-[13px] text-mute leading-relaxed">${t('pwMeta')}</div>
+                            </div>
+                            <div class="apple-card p-8 flex flex-col ${ring('transfer')}">
+                                ${recChip('transfer')}
+                                <h4 class="text-xl font-bold text-black mb-1">${t('tfCardTitle')}</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">${t('tfCardSub')}</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed flex-grow">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('tfLi1')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('tfLi2')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>${t('tfLi3')}</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-triangle-exclamation text-yellow-500 mt-1 text-xs shrink-0"></i>${t('tfLi4')}</li>
+                                </ul>
+                                <div class="mt-5 pt-4 border-t border-gray-100 text-[13px] text-mute leading-relaxed">${t('tfMeta')}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('costTitle')}</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('costSub')}</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                            <div class="apple-card p-7 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costPrivate')}</p>
+                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$55K ~ 68K+</p>
+                                <p class="text-[12px] text-mute leading-relaxed">${t('costPrivateNote')}</p>
+                            </div>
+                            <div class="apple-card p-7 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costPublic')}</p>
+                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$30K ~ 50K</p>
+                                <p class="text-[12px] text-mute leading-relaxed">${t('costPublicNote')}</p>
+                            </div>
+                            <div class="apple-card p-7 text-center ring-2 ${rec === 'transfer' || rec === 'mix' ? 'ring-gold' : 'ring-transparent'}">
+                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costCc')}</p>
+                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$10K ~ 15K</p>
+                                <p class="text-[12px] text-mute leading-relaxed">${t('costCcNote')}</p>
+                            </div>
+                            <div class="apple-card p-7 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costLiving')}</p>
+                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$25K ~ 35K</p>
+                                <p class="text-[12px] text-mute leading-relaxed">${t('costLivingNote')}</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-[13px] text-mute mt-8">${t('costNote')}</p>
+                    </div>
+                </div>
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('ugPrepTitle')}</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-folder-open"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">${t('ugDocsTitle')}</h4>
+                                <p class="text-mute text-sm mb-6">${t('ugDocsSub')}</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc1')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc2')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc3')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc4')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc5')}</span></li>
+                                </ul>
+                            </div>
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-clock"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">${t('ugTimingTitle')}</h4>
+                                <p class="text-mute text-sm mb-6">${t('ugTimingSub')}</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>${t('ugTime1')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>${t('ugTime2')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>${t('ugTime3')}</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>${t('ugTime4')}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
+                            <div class="apple-card p-6 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-1.5"><i class="fa-solid fa-passport text-royal mr-1.5"></i>${t('visaF1')}</p>
+                                <p class="text-[13px] text-gray-600 leading-relaxed">${t('visaF1Note')}</p>
+                            </div>
+                            <div class="apple-card p-6 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-1.5"><i class="fa-solid fa-briefcase text-royal mr-1.5"></i>${t('visaOpt')}</p>
+                                <p class="text-[13px] text-gray-600 leading-relaxed">${t('visaOptNote')}</p>
+                            </div>
+                            <div class="apple-card p-6 text-center">
+                                <p class="text-[13px] font-semibold text-mute mb-1.5"><i class="fa-solid fa-microchip text-royal mr-1.5"></i>${t('visaStem')}</p>
+                                <p class="text-[13px] text-gray-600 leading-relaxed">${t('visaStemNote')}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-4">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('pwSecTitle')}</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('pwSecSub')}</p>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-10 mb-10 text-[13px] md:text-[14px] font-semibold">
+                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">1</span> ${t('pwStep1')}</span>
+                            <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
+                            <span class="inline-flex items-center gap-2 bg-gold rounded-full px-4 py-2 text-black"><span class="w-5 h-5 rounded-full bg-black text-white text-[11px] flex items-center justify-center">2</span> ${t('pwStep2')}</span>
+                            <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
+                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">3</span> ${t('pwStep3')}</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            ${pathwayProviders.map(p => `
+                                <div class="apple-card p-7">
+                                    <div class="flex flex-wrap items-center gap-2.5 mb-2">
+                                        <h4 class="text-lg font-bold text-black tracking-tight">${p.name}</h4>
+                                        <span class="route-badge bg-blue-50 text-royal">${tr(p.tag)}</span>
+                                    </div>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed">${tr(p.unis)}</p>
+                                </div>`).join('')}
+                        </div>
+                        <p class="text-center text-[13px] text-mute mt-8">${t('pwSecNote')}</p>
+                    </div>
+                </div>
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-4">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('ccSecTitle')}</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('ccSecSub')}</p>
+                        </div>
+                        <div class="max-w-3xl mx-auto bg-[#fffbeb] border border-yellow-200 rounded-2xl p-6 mt-8 mb-10">
+                            <p class="text-[14px] text-gray-800 leading-relaxed"><i class="fa-solid fa-wand-magic-sparkles text-gold-deep mr-2"></i><strong>${t('ccTagLabel')}</strong> ${t('ccTagDesc')}</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            ${ccColleges.map(cc => `
+                                <div class="apple-card p-7">
+                                    <div class="flex flex-wrap items-baseline gap-x-2.5 mb-1">
+                                        <h4 class="text-lg font-bold text-black tracking-tight">${cc.name}</h4>
+                                        <span class="text-mute text-[12px] font-medium">${tr(cc.ko)}</span>
+                                    </div>
+                                    <p class="text-[13px] text-royal font-semibold mb-2"><i class="fa-solid fa-location-dot mr-1.5 text-[11px]"></i>${tr(cc.region)}</p>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed mb-4">${tr(cc.note)}</p>
+                                    <a href="${cc.url}" target="_blank" rel="noopener" class="text-[13px] font-semibold text-ink2 hover:text-royal transition inline-flex items-center gap-1.5">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>
+                                </div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-light py-20 px-4 border-t border-gray-200">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-10">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('listTitle')(fm ? tr(fm.label) : null)}</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('listSub')(fm ? tr(fm.label) : null)}</p>
+                        </div>
+                        <div id="ug-list-top" class="flex flex-wrap items-center justify-center gap-2.5 mb-3">
+                            <button class="filter-chip" data-f="all" onclick="renderUgCards('all')">${t('filterAll')}</button>
+                            <button class="filter-chip" data-f="pw" onclick="renderUgCards('pw')">${t('filterPw')}</button>
+                            <button class="filter-chip" data-f="tf" onclick="renderUgCards('tf')">${t('filterTf')}</button>
+                            <button class="filter-chip" data-f="direct" onclick="renderUgCards('direct')">${t('filterDirect')}</button>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+                            <span class="text-[12px] text-mute font-semibold mr-1">${t('sortLabel')}</span>
+                            <button class="filter-chip" data-s="rank" onclick="setUgSort('rank')"><i class="fa-solid fa-trophy text-[11px] mr-1"></i>${t('sortRank')}</button>
+                            <button class="filter-chip" data-s="name" onclick="setUgSort('name')"><i class="fa-solid fa-arrow-down-a-z text-[11px] mr-1"></i>${t('sortAz')}</button>
+                            <button class="filter-chip" data-s="kname" onclick="setUgSort('kname')"><i class="fa-solid fa-font text-[11px] mr-1"></i>${t('sortKo')}</button>
+                        </div>
+                        <p class="text-center text-[13px] text-mute mb-10"><span id="ug-count"></span> · ${t('countNote')}</p>
+                        <div id="ug-cards" class="space-y-3"></div>
+                        <div id="ug-pager" class="flex flex-wrap items-center justify-center gap-2 mt-8"></div>
+                    </div>
+                </div>
+
+                ${boardHTML()}
+                ${ctaHTML(t('ctaTitle'), t('ctaSubUg'))}
+                ${footerHTML()}
+            `;
+            resultSection.innerHTML = html;
+            // 진단 추천 경로를 기본 필터로. 표시 대학 수를 줄여 심플하게
+            renderUgCards(rec === 'pathway' ? 'pw' : rec === 'transfer' ? 'tf' : rec === 'direct' ? 'direct' : 'all');
+            history.replaceState(null, '', '#p=' + encodeURIComponent(JSON.stringify({ t: 'ug', s: currentState })));
+            window.scrollTo({ top: 0 });
+        }
+
+        /* 언어를 바꿨을 때 JS로 그려진 화면(질문·결과)을 현재 언어로 다시 그린다.
+           i18n.js의 applyLang()이 마지막에 호출한다. 지난 대화 버블은 그대로 두고
+           현재 질문 버블·선택지만 다시 그린다. */
+        function refreshDynamicView() {
+            const rs = document.getElementById('result-section');
+            if (rs && rs.style.display === 'block') { showResult(); return; }
+            const cs = document.getElementById('chat-section');
+            if (cs && cs.style.display === 'flex' && flowStack.length && step < activeQuestions().length) {
+                const snap = flowStack[flowStack.length - 1];
+                const history = document.getElementById('chat-history');
+                while (history.children.length > snap.childCount) history.lastElementChild.remove();
+                flowStack.pop();                      // askQuestion이 다시 push
+                document.getElementById('options-container').innerHTML = '';
+                askQuestion();
+            }
+        }
+
+        // ── 공유 링크(#p=)로 접속 시 결과 자동 복원 ──────────────────
+        (function restoreFromLink() {
+            const m = location.hash.match(/^#p=(.+)/);
+            if (!m) return;
+            try {
+                const d = JSON.parse(decodeURIComponent(m[1]));
+                if (!d || !d.s) return;
+                currentState = d.s;
+                document.getElementById('hero-section').style.display = 'none';
+                document.getElementById('home-extra').style.display = 'none';
+                showResult();
+            } catch (e) { /* 손상된 링크는 무시하고 홈을 그대로 표시 */ }
+        })();
+
+    </script>
+</body>
+</html>
