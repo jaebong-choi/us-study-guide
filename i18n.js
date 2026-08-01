@@ -227,7 +227,14 @@ const I18N = {
         statStudents: '학생 수',
         topMajors: '강세 전공',
         ugRoutesLabel: '진입 경로',
-        visitOfficial: '공식 입학 페이지 방문'
+        visitOfficial: '공식 입학 페이지 방문',
+        hubDetail: '학비·요건 상세',
+        hubPwTitle: '패스웨이 전체 가이드 보기',
+        hubPwDesc: '운영사별 조건과 학위 기간, 어학만 듣는 조건부 입학과 무엇이 다른지까지 정리했습니다.',
+        hubCcTitle: '커뮤니티칼리지 편입 가이드 보기',
+        hubCcDesc: 'UC 편입 보장(TAG) 조건, 학점 인정 기준, 2+2로 줄어드는 실제 비용을 확인하세요.',
+        hubListTitle: '미국 대학 126곳 학비·요건 비교',
+        hubListDesc: 'QS 순위와 IELTS 기준, 진학 경로를 학교별로 정리한 데이터베이스입니다.'
     },
 
     en: {
@@ -433,7 +440,14 @@ const I18N = {
         statStudents: "Students",
         topMajors: "Strong majors",
         ugRoutesLabel: "Entry routes",
-        visitOfficial: "Visit official admissions page"
+        visitOfficial: "Visit official admissions page",
+        hubDetail: "Fees and requirements",
+        hubPwTitle: "Read the full pathway guide",
+        hubPwDesc: "Provider conditions, how long the degree takes, and how a pathway differs from English-only conditional admission.",
+        hubCcTitle: "Read the community college transfer guide",
+        hubCcDesc: "UC Transfer Admission Guarantee conditions, how credits are recognised, and what 2+2 actually saves.",
+        hubListTitle: "Compare fees and requirements at 126 US universities",
+        hubListDesc: "A per-school database of QS ranks, IELTS levels and entry routes."
     }
 };
 

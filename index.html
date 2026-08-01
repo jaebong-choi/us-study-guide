@@ -124,6 +124,8 @@
         .consult-banner:hover { background:#F2CB2E; transform:translateY(-1px); }
         .uni-link-banner { background:#fff; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:14px; transition:all .25s ease; }
         .uni-link-banner:hover { background:#f5f5f7; }
+        .uni-link-banner.is-primary { background:#1d1d1f; color:#fff; border-color:#1d1d1f; }
+        .uni-link-banner.is-primary:hover { background:#3a3a3c; }
         .filter-chip { border-radius:980px; border:1px solid #d2d2d7; padding:8px 16px; font-size:13px; font-weight:600; color:#3a3a3c; background:#fff; transition:all .2s ease; }
         .filter-chip.active { background:#1d1d1f; color:#fff; border-color:#1d1d1f; }
         a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid #FFDE59; outline-offset:2px; }
@@ -518,6 +520,65 @@
             return (ug && ug.url) || EDU_USA_URL;
         }
 
+        // ── Study Guide Hub 연결 ────────────────────────────────────
+        // 진단 결과의 대학을 허브 상세 페이지(학비·IELTS·진학 경로 DB)로 잇는다.
+        const HUB_BASE = 'https://jaebong-choi.github.io/study-guide-hub';
+        const HUB_UNI = {
+            "Massachusetts Institute of Technology (MIT)": "us-mit",
+            "Harvard University": "us-harvard",
+            "Stanford University": "us-stanford",
+            "University of California, Berkeley": "us-berkeley",
+            "University of California, Los Angeles (UCLA)": "us-ucla",
+            "University of Michigan": "us-michigan",
+            "University of California, San Diego": "us-ucsd",
+            "New York University (NYU)": "us-nyu",
+            "University of California, Davis": "us-uc-davis",
+            "University of California, Irvine": "us-uc-irvine",
+            "University of Illinois Urbana-Champaign": "us-uiuc",
+            "University of Wisconsin–Madison": "us-wisconsin",
+            "University of California, Santa Barbara": "us-ucsb",
+            "University of Washington": "us-uw",
+            "Rutgers University–New Brunswick": "us-rutgers",
+            "Purdue University": "us-purdue",
+            "University of Connecticut": "us-uconn",
+            "Stony Brook University": "us-stony-brook",
+            "University of Illinois Chicago (UIC)": "us-uic",
+            "American University": "us-american",
+            "Florida International University": "us-fiu",
+            "Auburn University": "us-auburn",
+            "George Mason University": "us-george-mason",
+            "Arizona State University": "us-asu",
+            "University of Utah": "us-utah",
+            "Oregon State University": "us-oregon-state",
+            "University of Massachusetts Boston": "us-umass-boston"
+        };
+        // 허브에 아직 없는 대학은 링크를 만들지 않는다(버튼 자체를 숨김)
+        function hubUniUrl(name) {
+            const id = HUB_UNI[name];
+            return id ? `${HUB_BASE}/uni/${id}.html` : null;
+        }
+        const HUB_GUIDE_URL = `${HUB_BASE}/guide/us.html`;
+        const HUB_LIST_URL = `${HUB_BASE}/uni/us.html`;
+
+        /* 진단 결과 안에서 전체 가이드로 넘어가는 안내 카드.
+           추천 경로에 해당할 때만 금색 테두리로 강조한다. */
+        function hubGuideCTA(highlight, url, titleKey, descKey, icon) {
+            return `
+                <div class="max-w-3xl mx-auto mt-10">
+                    <a href="${url}" target="_blank" rel="noopener"
+                       class="apple-card block p-6 md:p-7 transition hover:shadow-lg ${highlight ? 'ring-2 ring-gold' : ''}">
+                        <div class="flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0 text-lg"><i class="fa-solid ${icon}"></i></div>
+                            <div class="min-w-0">
+                                <p class="text-[15px] md:text-[16px] font-bold text-black tracking-tight mb-0.5">${t(titleKey)}</p>
+                                <p class="text-[13px] text-mute leading-relaxed">${t(descKey)}</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-gray-300 text-sm ml-auto shrink-0"></i>
+                        </div>
+                    </a>
+                </div>`;
+        }
+
         function showUniDetail(name) {
             const info = uniInfo(name);
             if (!info) return;
@@ -552,6 +613,7 @@
                             ${routes.length ? `<p class="text-[13px] font-semibold text-ink2 mb-2.5">${t('ugRoutesLabel')}</p><div class="flex flex-wrap gap-2 mb-3">${routes.join('')}</div>` : ''}
                             ${ug ? `<p class="text-[13px] text-mute leading-relaxed mb-7">${tr(ug.note)}</p>` : '<div class="mb-4"></div>'}
                             <div class="flex flex-col gap-2.5">
+                                ${hubUniUrl(name) ? `<a href="${hubUniUrl(name)}" target="_blank" rel="noopener" class="uni-link-banner is-primary text-center font-semibold py-3 px-4 w-full flex items-center justify-center gap-2 text-[14px]"><i class="fa-solid fa-table-list text-[11px] opacity-70"></i> ${t('hubDetail')}</a>` : ''}
                                 <a href="${ug ? ug.url : officialSchoolUrl(name)}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3.5 px-4 w-full flex items-center justify-center gap-2 text-[15px]"><i class="fa-solid fa-globe text-xs"></i> ${t('visitOfficial')}</a>
                             </div>
                         </div>
@@ -1066,8 +1128,9 @@
                         ${rel.length ? `<p class="text-[13px] text-royal font-semibold mt-1"><i class="fa-solid fa-graduation-cap mr-1.5 text-[11px]"></i>${rel.map(tr).join(' · ')}</p>` : ''}
                         <div class="flex flex-wrap gap-1.5 mt-1.5">${routes.join('')}</div>
                     </div>
-                    <div class="shrink-0">
+                    <div class="shrink-0 flex flex-col sm:flex-row gap-2">
                         ${hasInfo ? `<button onclick="showUniDetail(this.dataset.u)" data-u="${u.n.replace(/"/g, '&quot;')}" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5 w-full sm:w-auto justify-center">${t('schoolInfo')} <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i></button>` : `<a href="${u.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5 w-full sm:w-auto justify-center">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>`}
+                        ${hubUniUrl(u.n) ? `<a href="${hubUniUrl(u.n)}" target="_blank" rel="noopener" class="uni-link-banner is-primary text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5 w-full sm:w-auto justify-center whitespace-nowrap">${t('hubDetail')} <i class="fa-solid fa-table-list text-[10px] opacity-70"></i></a>` : ''}
                     </div>
                 </div>`;
         }
@@ -1302,6 +1365,7 @@
                                 </div>`).join('')}
                         </div>
                         <p class="text-center text-[13px] text-mute mt-8">${t('pwSecNote')}</p>
+                        ${hubGuideCTA(rec === 'pathway' || rec === 'mix', HUB_GUIDE_URL, 'hubPwTitle', 'hubPwDesc', 'fa-book-open')}
                     </div>
                 </div>
 
@@ -1326,6 +1390,7 @@
                                     <a href="${cc.url}" target="_blank" rel="noopener" class="text-[13px] font-semibold text-ink2 hover:text-royal transition inline-flex items-center gap-1.5">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>
                                 </div>`).join('')}
                         </div>
+                        ${hubGuideCTA(rec === 'transfer' || rec === 'mix', HUB_GUIDE_URL + '#cc', 'hubCcTitle', 'hubCcDesc', 'fa-arrows-turn-right')}
                     </div>
                 </div>
 
@@ -1350,6 +1415,7 @@
                         <p class="text-center text-[13px] text-mute mb-10"><span id="ug-count"></span> · ${t('countNote')}</p>
                         <div id="ug-cards" class="space-y-3"></div>
                         <div id="ug-pager" class="flex flex-wrap items-center justify-center gap-2 mt-8"></div>
+                        ${hubGuideCTA(false, HUB_LIST_URL, 'hubListTitle', 'hubListDesc', 'fa-table-list')}
                     </div>
                 </div>
 
