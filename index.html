@@ -315,7 +315,7 @@
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-14">
                         <h2 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black" data-i18n-html="rSumTitle">미국 대학으로 가는<br class="sm:hidden"> 세 가지 길.</h2>
-                        <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed" data-i18n="rSumSub">성적·영어·예산 조합에 따라 최적 경로가 달라집니다. 진단을 시작하면 아래 세 경로 중 내 상황에 맞는 루트를 추천해 드립니다.</p>
+                        <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed" data-i18n="rSumSub">내신·SAT·영어·목표 조합에 따라 최적 경로가 달라집니다. 진단을 시작하면 아래 세 경로 중 내 상황에 맞는 루트를 추천해 드립니다.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="apple-card p-8">
@@ -657,13 +657,16 @@
             },
             {
                 key: "sat",
-                q: "SAT · ACT 준비 상황을 알려주세요.<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ 2026-27 기준 아이비리그·MIT·스탠퍼드 등 최상위권은 SAT/ACT 필수입니다. 패스웨이·CC 편입은 필요하지 않습니다.</span>",
+                q: "SAT나 ACT 점수가 있으신가요?<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ 2026-27 기준 아이비리그·MIT·스탠퍼드 등 최상위권은 SAT/ACT 필수입니다. 패스웨이·CC 편입은 필요하지 않습니다.</span>",
                 options: [
-                    { label: "SAT 1400+ · ACT 30+ 보유", value: "high" },
-                    { label: "SAT 1200~1390대 보유", value: "mid" },
+                    { label: "네, 있습니다", value: "__satscore__" },
                     { label: "준비 중 · 응시 예정", value: "prep" },
-                    { label: "없음 · 계획 없음", value: "none" }
-                ]
+                    { label: "없습니다", value: "none" }
+                ],
+                // 점수를 받은 뒤 구간으로 환산한다. 없다고 하면 바로 다음 질문으로 넘어간다.
+                bandOf: (type, sc) => type === 'SAT'
+                    ? (sc >= 1400 ? 'high' : sc >= 1200 ? 'mid' : 'low')
+                    : (sc >= 30 ? 'high' : sc >= 25 ? 'mid' : 'low')
             },
             {
                 key: "english",
@@ -689,16 +692,8 @@
                     { label: "찾는 계열이 없어요 · 특수 전공 직접 입력", value: "__custommajor__" }
                 ]
             },
-            {
-                key: "budget",
-                q: "연간 유학 예산(학비+생활비)은 어느 정도인가요?",
-                options: [
-                    { label: "연 $70,000 이상 (사립 포함 자유)", value: "high" },
-                    { label: "연 $45,000 ~ 70,000 (주립 중심)", value: "mid" },
-                    { label: "학비 절감이 중요 (연 $45,000 이하)", value: "low" }
-                ],
-                note: "※ 사립 학비 연 $55,000~68,000+, 주립 $30,000~50,000, CC $10,000~15,000 수준입니다 (생활비 별도)."
-            },
+            // 예산 질문은 두지 않는다. 학생이 미국 학비 수준을 알고 답할 수 있는 항목이 아니라서
+            // 답이 실제 예산이 아니라 추측이 된다. 비용은 결과 페이지의 비용표로 보여준다.
             {
                 key: "target",
                 q: "진학에서 가장 중요하게 생각하는 기준은 무엇인가요?",
@@ -870,6 +865,13 @@
                 setTimeout(renderTestTypeChoice, 500);
                 return;
             }
+            if (value === '__satscore__') {
+                addChatBubble('user', label);
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', t('satTypePrompt'));
+                setTimeout(renderSatTypeChoice, 500);
+                return;
+            }
             if (value === '__custommajor__') {
                 addChatBubble('user', label);
                 document.getElementById('options-container').innerHTML = '';
@@ -967,6 +969,72 @@
                 appendBackButton(c);
             };
             c.appendChild(back);
+        }
+
+        // ── SAT · ACT 점수 입력 ──────────────────────────────────────
+        // 있다고 답한 경우에만 시험 종류를 고르고 점수를 받는다. 영어 성적 입력과 같은 흐름이다.
+        const SAT_RANGE = { SAT: [400, 1600], ACT: [1, 36] };
+        function renderSatTypeChoice() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            [['SAT (400~1600)', 'SAT'], ['ACT (1~36)', 'ACT']].forEach(([lbl, type]) => {
+                const b = document.createElement('button');
+                b.className = OPT_BTN_CLASS;
+                b.innerText = lbl;
+                b.onclick = () => renderSatScoreInput(type);
+                c.appendChild(b);
+            });
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-400 border border-[#3d3d40] hover:bg-[#2d2d2f] py-3.5 px-4 font-medium text-[14px] md:text-[15px] w-full sm:col-span-2';
+            back.innerText = t('backToScores');
+            back.onclick = () => {
+                c.innerHTML = '';
+                activeQuestions()[step].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = tr(opt.label);
+                    btn.onclick = () => handleAnswer(opt.value, tr(opt.label));
+                    c.appendChild(btn);
+                });
+                appendBackButton(c);
+            };
+            c.appendChild(back);
+        }
+
+        function renderSatScoreInput(testType) {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            const [min, max] = SAT_RANGE[testType];
+            const wrap = document.createElement('div');
+            wrap.className = 'sm:col-span-2 flex flex-col gap-3';
+            wrap.innerHTML = `
+                <input id="satScoreInput" type="number" inputmode="numeric" min="${min}" max="${max}" step="1"
+                    placeholder="${t('scorePh')(testType, min, max)}"
+                    class="bg-[#2d2d2f] text-white border border-[#3d3d40] rounded-2xl py-3.5 px-5 text-[15px] focus:outline-none focus:border-gold w-full placeholder-gray-500" />
+                <div class="flex gap-3">
+                    <button id="satSubmitBtn" class="pill-btn bg-gold hover:bg-gold-deep text-black py-3.5 px-4 font-semibold text-[15px] flex-1">${t('satSubmitBtn')}</button>
+                    <button id="satBackBtn" class="pill-btn bg-[#2d2d2f] text-gray-300 border border-[#3d3d40] hover:bg-[#3d3d40] py-3.5 px-5 font-medium text-[15px]">${t('backShort')}</button>
+                </div>`;
+            c.appendChild(wrap);
+            document.getElementById('satSubmitBtn').onclick = () => submitSat(testType);
+            document.getElementById('satBackBtn').onclick = renderSatTypeChoice;
+            document.getElementById('satScoreInput').focus();
+        }
+
+        function submitSat(testType) {
+            const input = document.getElementById('satScoreInput');
+            const sc = parseInt(input.value, 10);
+            const [min, max] = SAT_RANGE[testType];
+            if (isNaN(sc) || sc < min || sc > max) { input.value = ''; input.placeholder = t('scoreInvalid')(min, max); return; }
+            const q = activeQuestions()[step];
+            const band = q.bandOf(testType, sc);
+            addChatBubble('user', testType + ' ' + sc);
+            addChatBubble('ai', t('satBandMsg')(testType, sc, t('satBand' + band)));
+            document.getElementById('options-container').innerHTML = '';
+            currentState[q.key] = band;
+            currentState.satScore = testType + ' ' + sc;
+            step++;
+            setTimeout(askQuestion, 600);
         }
 
         const TEST_RANGE = { IELTS: [0, 9], DET: [10, 160], PTE: [10, 90] };
@@ -1069,8 +1137,7 @@
             const satReady = s.sat === 'high' || s.sat === 'mid';
             const canDirect = s.grades === 'top' && engHigh;
             let key;
-            if (s.budget === 'low') key = 'transfer';
-            else if (canDirect && (satReady || s.sat === 'prep')) key = 'direct';
+            if (canDirect && (satReady || s.sat === 'prep')) key = 'direct';
             else if (s.target === 'top') key = 'transfer';
             else if (s.target === 'fast') key = 'pathway';
             else if (s.grades === 'top' || s.grades === 'mid') key = 'pathway';
@@ -1083,12 +1150,12 @@
         function ugRouteReason(s, key) {
             let reason;
             if (key === 'direct') reason = t('rDirect');
-            else if (key === 'transfer') reason = s.budget === 'low' ? t('rTfBudget') : t('rTfTop');
+            else if (key === 'transfer') reason = t('rTfTop');
             else if (key === 'pathway') reason = s.target === 'fast' ? t('rPwFast') : t('rPwFit');
             else reason = t('rMix');
             if (s.status === 'hs2') reason += ' ' + t('hs2Add');
             if (s.english === 'none') reason += ' ' + t('engNoneAdd');
-            if (s.sat === 'none' && key === 'direct') reason += ' ' + t('satNoneAdd');
+            if ((s.sat === 'none' || s.sat === 'low') && key === 'direct') reason += ' ' + t('satNoneAdd');
             return reason;
         }
 
@@ -1281,14 +1348,15 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-[14px]">
-                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPrivate')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$55K ~ 68K+</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPrivateNote')}</td></tr>
-                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPublic')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$30K ~ 50K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPublicNote')}</td></tr>
-                                    <tr class="border-b border-gray-100 ${rec === 'transfer' || rec === 'mix' ? 'bg-[#fffbeb]' : ''}"><td class="py-3.5 px-5 font-semibold text-black">${t('costCc')}${rec === 'transfer' || rec === 'mix' ? ` <span class="route-badge bg-gold text-black ml-1">${t('recChip')}</span>` : ''}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$10K ~ 15K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costCcNote')}</td></tr>
-                                    <tr><td class="py-3.5 px-5 font-semibold text-black">${t('costLiving')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$25K ~ 35K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costLivingNote')}</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPrivate')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$55K ~ 68K+<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="55000" data-max="68000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPrivateNote')}</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPublic')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$30K ~ 50K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="30000" data-max="50000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPublicNote')}</td></tr>
+                                    <tr class="border-b border-gray-100 ${rec === 'transfer' || rec === 'mix' ? 'bg-[#fffbeb]' : ''}"><td class="py-3.5 px-5 font-semibold text-black">${t('costCc')}${rec === 'transfer' || rec === 'mix' ? ` <span class="route-badge bg-gold text-black ml-1">${t('recChip')}</span>` : ''}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$10K ~ 15K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="10000" data-max="15000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costCcNote')}</td></tr>
+                                    <tr><td class="py-3.5 px-5 font-semibold text-black">${t('costLiving')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$25K ~ 35K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="25000" data-max="35000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costLivingNote')}</td></tr>
                                 </tbody>
                             </table>
                         </div>
-                        <p class="text-center text-[12px] text-mute mt-5">${t('costNote')}</p>
+                        <p class="fx-date text-center text-[12px] text-mute mt-4"></p>
+                        <p class="text-center text-[12px] text-mute mt-2">${t('costNote')}</p>
                     </div>
                 </div>
 
@@ -1429,8 +1497,46 @@
             // 진단 추천 경로를 기본 필터로. 표시 대학 수를 줄여 심플하게
             renderUgCards(rec === 'pathway' ? 'pw' : rec === 'transfer' ? 'tf' : rec === 'direct' ? 'direct' : 'all');
             history.replaceState(null, '', '#p=' + encodeURIComponent(JSON.stringify({ t: 'ug', s: currentState })));
+            renderKrw();   // 비용표가 방금 그려졌으니 환율이 이미 도착해 있으면 바로 채운다
             window.scrollTo({ top: 0 });
         }
+
+        /* 원화 환산 — 조회 시점 환율을 받아 달러 금액 밑에 표시한다.
+           결과가 JS로 그려지므로 showResult() 끝과 환율 도착 시점 양쪽에서 호출한다.
+           환율을 못 받으면 조용히 생략하고 달러 금액만 남는다. (허브 uni 페이지와 같은 방식) */
+        var FX_RATE = null;
+        function renderKrw() {
+            if (!FX_RATE) return;
+            var en = LANG === 'en';
+            function fmt(v) {
+                var man = Math.round(v * FX_RATE / 10000);
+                if (en) return '₩' + (man * 10000).toLocaleString('en-US');
+                if (man >= 10000) {
+                    var eok = Math.floor(man / 10000), rest = man % 10000;
+                    return eok + '억' + (rest ? ' ' + rest.toLocaleString('ko-KR') + '만' : '') + ' 원';
+                }
+                return man.toLocaleString('ko-KR') + '만 원';
+            }
+            document.querySelectorAll('.krw').forEach(function (el) {
+                var min = parseFloat(el.getAttribute('data-min'));
+                var max = parseFloat(el.getAttribute('data-max'));
+                if (isNaN(min) && isNaN(max)) return;
+                if (isNaN(min)) min = max;
+                if (isNaN(max)) max = min;
+                var range = min === max ? fmt(min) : (en ? fmt(min) + ' ~ ' + fmt(max) : fmt(min).replace(' 원', '') + '~' + fmt(max));
+                el.textContent = (en ? 'approx. ' : '약 ') + range;
+            });
+            var today = new Date();
+            document.querySelectorAll('.fx-date').forEach(function (el) {
+                el.textContent = en
+                    ? 'KRW amounts converted at the rate as of ' + today.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+                    : '원화는 ' + today.getFullYear() + '. ' + (today.getMonth() + 1) + '. ' + today.getDate() + '. 환율로 환산한 참고 값입니다.';
+            });
+        }
+        fetch('https://open.er-api.com/v6/latest/USD')
+            .then(function (r) { return r.json(); })
+            .then(function (d) { FX_RATE = d && d.rates && d.rates.KRW; renderKrw(); })
+            .catch(function () {});
 
         /* 언어를 바꿨을 때 JS로 그려진 화면(질문·결과)을 현재 언어로 다시 그린다.
            i18n.js의 applyLang()이 마지막에 호출한다. 지난 대화 버블은 그대로 두고
