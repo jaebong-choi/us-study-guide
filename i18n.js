@@ -584,14 +584,17 @@ const DATA_EN = {
     "캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.": "Has on-campus housing and runs programmes for students who haven't finished high school.",
     "도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.": "A central-city campus with well-organised transfer preparation.",
     "유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.": "Strong international-student support and a long-running university transfer track.",
-    "IELTS 5.0 · 점수 없이 입학 후 집중영어(IEP) 경유 가능": "IELTS 5.0, or enter with no score and start in the Intensive English Program",
-    "IELTS 6.0 · 미달 시 조건부입학 후 제휴 어학원 수료로 진입": "IELTS 6.0; below that, conditional admission via a partner language school",
-    "IELTS 5.5 · 부설 어학기관(IEC) 수료 시 시험 면제": "IELTS 5.5, waived on completing the on-site language centre (IEC)",
-    "IELTS 4.5 · 제휴 어학원 지정 레벨 수료로 면제 가능": "IELTS 4.5, or waived on completing a set level at a partner language school",
-    "IELTS 5.5 · 점수 없이 입학 후 집중영어 경유 가능": "IELTS 5.5, or enter with no score and start in Intensive English",
-    "IELTS 5.0 · 점수 없으면 자체 배치고사 후 ESL부터 시작": "IELTS 5.0; with no score you take a placement test and start in ESL",
-    "IELTS 5.5 · 조건부입학으로 영어과정 먼저 이수 가능": "IELTS 5.5, or conditional admission with English courses first",
-    "점수 없이 입학 가능 · 집중영어(IEP)부터 단계 진입": "No test score needed — start in the Intensive English Program and step up",
+    /* 영어 요건 — 2026-08-02 각 칼리지 영어요건 공식 페이지로 대조한 값이다.
+       벨뷰·시애틀센트럴은 5.5가 아니라 6.0이었고, 그린리버는 '점수 없이 입학'이 아니라
+       Academic Transfer가 IELTS 5.5이고 점수가 없으면 IEP부터 시작하는 구조였다. */
+    "IELTS 5.0 · TOEFL iBT 61 · 듀오링고 75 · 점수가 없으면 부설 집중영어(IEP)부터": "IELTS 5.0 · TOEFL iBT 61 · Duolingo 75 · With no score you start in the Intensive English Program",
+    "IELTS 6.0 · TOEFL iBT 61 · 미달 시 ELS·Kaplan 등 제휴 어학원 수료로 정식 입학": "IELTS 6.0 · TOEFL iBT 61 · Below that, finish a partner language school such as ELS or Kaplan for full admission",
+    "IELTS 5.5 · TOEFL iBT 57 · 듀오링고 90 · 미달 시 부설 IEC 집중영어 과정 경유": "IELTS 5.5 · TOEFL iBT 57 · Duolingo 90 · Below that, you go through the on-site IEC intensive English program",
+    "IELTS 4.5 · TOEFL iBT 52 · 듀오링고 80 · 제휴 어학원 지정 레벨 수료 시 면제": "IELTS 4.5 · TOEFL iBT 52 · Duolingo 80 · Waived on finishing the set level at a partner language school",
+    "IELTS 6.0(모든 영역 5.5 이상) · TOEFL iBT 61 · 미달 시 부설 집중영어(ELI)부터": "IELTS 6.0 with every band 5.5 or above · TOEFL iBT 61 · Below that, you start in the English Language Institute",
+    "IELTS 5.0(모든 영역) · TOEFL iBT 54 · 점수가 없으면 무료 온라인 배치고사로 대체": "IELTS 5.0 in every band · TOEFL iBT 54 · With no score you can take the free online placement test instead",
+    "IELTS 6.0(라이팅 5.0) · TOEFL iBT 64 · 미달 시 College Bridge 배치, 최상위 레벨 수료 시 면제": "IELTS 6.0 with writing 5.0 · TOEFL iBT 64 · Below that you are placed in College Bridge; finishing its top level waives the test",
+    "IELTS 5.5(밴드 5.0 미만 없음) · TOEFL iBT 61 · 미달 시 집중영어(IEP)부터 단계 진입": "IELTS 5.5 with no band below 5.0 · TOEFL iBT 61 · Below that, you work up through the Intensive English Program",
 
     /* --- 대학 한글명 --- */
     "매사추세츠공과대학교": "MIT",

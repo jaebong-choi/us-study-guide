@@ -440,14 +440,14 @@
 
         // ── 주요 커뮤니티칼리지(2+2 편입 출발점) ────────────────────
         const ccColleges = [
-            { name:'Santa Monica College', ko:'샌타모니카 칼리지', region:'캘리포니아 · LA', note:'UCLA 편입 전미 최다 배출로 유명한 대표 CC. UC TAG 지원.', eng:'IELTS 5.0 · 점수 없이 입학 후 집중영어(IEP) 경유 가능', url:'https://www.smc.edu/' },
-            { name:'De Anza College', ko:'디앤자 칼리지', region:'캘리포니아 · 실리콘밸리', note:'UC 편입 실적 최상위권. 쿠퍼티노 위치로 CS 계열 인기.', eng:'IELTS 6.0 · 미달 시 조건부입학 후 제휴 어학원 수료로 진입', url:'https://www.deanza.edu/' },
-            { name:'Diablo Valley College', ko:'디아블로 밸리 칼리지', region:'캘리포니아 · 베이에리어', note:'UC Berkeley 인접 지역. 버클리 편입 다수 배출.', eng:'IELTS 5.5 · 부설 어학기관(IEC) 수료 시 시험 면제', url:'https://www.dvc.edu/' },
-            { name:'Irvine Valley College', ko:'어바인 밸리 칼리지', region:'캘리포니아 · 어바인', note:'UC Irvine 인접. 안전한 도시 환경으로 유학생 선호.', eng:'IELTS 4.5 · 제휴 어학원 지정 레벨 수료로 면제 가능', url:'https://www.ivc.edu/' },
-            { name:'Bellevue College', ko:'벨뷰 칼리지', region:'워싱턴 · 시애틀 동부', note:'UW 시애틀 편입 1위 CC. 2026년 WWU 편입 보장(GPA 2.5+) 협약.', eng:'IELTS 5.5 · 점수 없이 입학 후 집중영어 경유 가능', url:'https://www.bellevuecollege.edu/international/' },
-            { name:'Edmonds College', ko:'에드먼즈 칼리지', region:'워싱턴 · 시애틀 북부', note:'캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.', eng:'IELTS 5.0 · 점수 없으면 자체 배치고사 후 ESL부터 시작', url:'https://www.edmonds.edu/' },
-            { name:'Seattle Central College', ko:'시애틀 센트럴 칼리지', region:'워싱턴 · 시애틀 도심', note:'도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.', eng:'IELTS 5.5 · 조건부입학으로 영어과정 먼저 이수 가능', url:'https://seattlecentral.edu/' },
-            { name:'Green River College', ko:'그린리버 칼리지', region:'워싱턴 · 오번', note:'유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.', eng:'점수 없이 입학 가능 · 집중영어(IEP)부터 단계 진입', url:'https://www.greenriver.edu/' }
+            { name:'Santa Monica College', ko:'샌타모니카 칼리지', region:'캘리포니아 · LA', note:'UCLA 편입 전미 최다 배출로 유명한 대표 CC. UC TAG 지원.', eng:'IELTS 5.0 · TOEFL iBT 61 · 듀오링고 75 · 점수가 없으면 부설 집중영어(IEP)부터', url:'https://www.smc.edu/', hub:'us-smc' },
+            { name:'De Anza College', ko:'디앤자 칼리지', region:'캘리포니아 · 실리콘밸리', note:'UC 편입 실적 최상위권. 쿠퍼티노 위치로 CS 계열 인기.', eng:'IELTS 6.0 · TOEFL iBT 61 · 미달 시 ELS·Kaplan 등 제휴 어학원 수료로 정식 입학', url:'https://www.deanza.edu/', hub:'us-deanza' },
+            { name:'Diablo Valley College', ko:'디아블로 밸리 칼리지', region:'캘리포니아 · 베이에리어', note:'UC Berkeley 인접 지역. 버클리 편입 다수 배출.', eng:'IELTS 5.5 · TOEFL iBT 57 · 듀오링고 90 · 미달 시 부설 IEC 집중영어 과정 경유', url:'https://www.dvc.edu/', hub:'us-dvc' },
+            { name:'Irvine Valley College', ko:'어바인 밸리 칼리지', region:'캘리포니아 · 어바인', note:'UC Irvine 인접. 안전한 도시 환경으로 유학생 선호.', eng:'IELTS 4.5 · TOEFL iBT 52 · 듀오링고 80 · 제휴 어학원 지정 레벨 수료 시 면제', url:'https://www.ivc.edu/', hub:'us-ivc' },
+            { name:'Bellevue College', ko:'벨뷰 칼리지', region:'워싱턴 · 시애틀 동부', note:'UW 시애틀 편입 1위 CC. 2026년 WWU 편입 보장(GPA 2.5+) 협약.', eng:'IELTS 6.0(모든 영역 5.5 이상) · TOEFL iBT 61 · 미달 시 부설 집중영어(ELI)부터', url:'https://www.bellevuecollege.edu/international/', hub:'us-bellevue' },
+            { name:'Edmonds College', ko:'에드먼즈 칼리지', region:'워싱턴 · 시애틀 북부', note:'캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.', eng:'IELTS 5.0(모든 영역) · TOEFL iBT 54 · 점수가 없으면 무료 온라인 배치고사로 대체', url:'https://www.edmonds.edu/', hub:'us-edmonds' },
+            { name:'Seattle Central College', ko:'시애틀 센트럴 칼리지', region:'워싱턴 · 시애틀 도심', note:'도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.', eng:'IELTS 6.0(라이팅 5.0) · TOEFL iBT 64 · 미달 시 College Bridge 배치, 최상위 레벨 수료 시 면제', url:'https://seattlecentral.edu/', hub:'us-seattle-central' },
+            { name:'Green River College', ko:'그린리버 칼리지', region:'워싱턴 · 오번', note:'유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.', eng:'IELTS 5.5(밴드 5.0 미만 없음) · TOEFL iBT 61 · 미달 시 집중영어(IEP)부터 단계 진입', url:'https://www.greenriver.edu/', hub:'us-green-river' }
         ];
 
         // ── 대학 목록 (US News 2026 · 경로 데이터) ───────────────────
@@ -1386,7 +1386,10 @@
                                     <p class="text-[13px] text-royal font-semibold mb-2"><i class="fa-solid fa-location-dot mr-1.5 text-[11px]"></i>${tr(cc.region)}</p>
                                     <p class="text-[14px] text-gray-600 leading-relaxed mb-2.5">${tr(cc.note)}</p>
                                     <p class="text-[13px] text-gray-700 leading-relaxed mb-4 bg-paper rounded-lg px-3 py-2"><i class="fa-solid fa-spell-check text-royal mr-1.5 text-[11px]"></i>${tr(cc.eng)}</p>
-                                    <a href="${cc.url}" target="_blank" rel="noopener" class="text-[13px] font-semibold text-ink2 hover:text-royal transition inline-flex items-center gap-1.5">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>
+                                    <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                                        <a href="${HUB_BASE}/uni/${cc.hub}.html" target="_blank" rel="noopener" class="text-[13px] font-semibold text-royal hover:text-ink2 transition inline-flex items-center gap-1.5">${t('hubDetail')} <i class="fa-solid fa-arrow-right text-[10px] opacity-60"></i></a>
+                                        <a href="${cc.url}" target="_blank" rel="noopener" class="text-[13px] font-semibold text-ink2 hover:text-royal transition inline-flex items-center gap-1.5">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>
+                                    </div>
                                 </div>`).join('')}
                         </div>
                         ${hubGuideCTA(rec === 'transfer' || rec === 'mix', HUB_GUIDE_URL + '#cc', 'hubCcTitle', 'hubCcDesc', 'fa-arrows-turn-right')}
