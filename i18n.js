@@ -195,7 +195,7 @@ const I18N = {
 
         /* ---------- 커뮤니티칼리지 ---------- */
         ccSecTitle: '2+2 출발점, 주요 커뮤니티칼리지',
-        ccSecSub: '편입 실적과 유학생 지원으로 검증된 대표 CC들입니다. 캘리포니아는 UC 편입, 워싱턴은 UW 편입 루트가 강합니다.',
+        ccSecSub: '편입 실적과 유학생 지원으로 검증된 대표 CC들입니다. 캘리포니아는 UC 편입, 워싱턴은 UW 편입 루트가 강합니다. 영어 문턱도 가장 낮아서, IELTS 4.5~6.0이면 되고 점수가 아예 없어도 부설 어학과정으로 시작해 본과로 넘어갈 수 있습니다.',
         ccTagLabel: 'UC TAG(편입 보장)란?',
         ccTagDesc: '캘리포니아 CC에서 요건(지정 과목 + GPA)을 채우면 UC 데이비스 · 어바인 · 머세드 · 리버사이드 · 샌타바버라 · 샌타크루즈 6개 캠퍼스 중 한 곳의 편입이 보장되는 제도입니다. 국제학생도 대상이며, UCLA · 버클리 · 샌디에이고는 TAG 미참여로 일반 편입 경쟁을 거칩니다.',
 
@@ -234,7 +234,10 @@ const I18N = {
         hubCcTitle: '커뮤니티칼리지 편입 가이드 보기',
         hubCcDesc: 'UC 편입 보장(TAG) 조건, 학점 인정 기준, 2+2로 줄어드는 실제 비용을 확인하세요.',
         hubListTitle: '미국 대학 126곳 학비·요건 비교',
-        hubListDesc: 'QS 순위와 IELTS 기준, 진학 경로를 학교별로 정리한 데이터베이스입니다.'
+        hubListDesc: 'QS 순위와 IELTS 기준, 진학 경로를 학교별로 정리한 데이터베이스입니다.',
+        costColItem: '구분',
+        costColRange: '연간 학비',
+        costColNote: '비고'
     },
 
     en: {
@@ -409,7 +412,7 @@ const I18N = {
         pwSecNote: "※ Partner lists change often. Confirm the current list on each provider's official pages.",
 
         ccSecTitle: "Where 2+2 starts: the key community colleges",
-        ccSecSub: "Colleges proven by transfer results and international support. California feeds the UC system; Washington feeds UW.",
+        ccSecSub: "Colleges proven by transfer results and international support. California feeds the UC system; Washington feeds UW. The English bar is the lowest of any route: IELTS 4.5-6.0, and with no score at all you can start in the college's own English program and step up into credit classes.",
         ccTagLabel: "What is UC TAG?",
         ccTagDesc: "Complete the required courses and GPA at a California community college and your transfer is guaranteed to one of six UC campuses — Davis, Irvine, Merced, Riverside, Santa Barbara or Santa Cruz. International students qualify too. UCLA, Berkeley and San Diego sit outside TAG, so those transfers stay competitive.",
 
@@ -447,7 +450,10 @@ const I18N = {
         hubCcTitle: "Read the community college transfer guide",
         hubCcDesc: "UC Transfer Admission Guarantee conditions, how credits are recognised, and what 2+2 actually saves.",
         hubListTitle: "Compare fees and requirements at 126 US universities",
-        hubListDesc: "A per-school database of QS ranks, IELTS levels and entry routes."
+        hubListDesc: "A per-school database of QS ranks, IELTS levels and entry routes.",
+        costColItem: "Type",
+        costColRange: "Annual tuition",
+        costColNote: "Notes"
     }
 };
 
@@ -578,6 +584,14 @@ const DATA_EN = {
     "캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.": "Has on-campus housing and runs programmes for students who haven't finished high school.",
     "도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.": "A central-city campus with well-organised transfer preparation.",
     "유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.": "Strong international-student support and a long-running university transfer track.",
+    "IELTS 5.0 · 점수 없이 입학 후 집중영어(IEP) 경유 가능": "IELTS 5.0, or enter with no score and start in the Intensive English Program",
+    "IELTS 6.0 · 미달 시 조건부입학 후 제휴 어학원 수료로 진입": "IELTS 6.0; below that, conditional admission via a partner language school",
+    "IELTS 5.5 · 부설 어학기관(IEC) 수료 시 시험 면제": "IELTS 5.5, waived on completing the on-site language centre (IEC)",
+    "IELTS 4.5 · 제휴 어학원 지정 레벨 수료로 면제 가능": "IELTS 4.5, or waived on completing a set level at a partner language school",
+    "IELTS 5.5 · 점수 없이 입학 후 집중영어 경유 가능": "IELTS 5.5, or enter with no score and start in Intensive English",
+    "IELTS 5.0 · 점수 없으면 자체 배치고사 후 ESL부터 시작": "IELTS 5.0; with no score you take a placement test and start in ESL",
+    "IELTS 5.5 · 조건부입학으로 영어과정 먼저 이수 가능": "IELTS 5.5, or conditional admission with English courses first",
+    "점수 없이 입학 가능 · 집중영어(IEP)부터 단계 진입": "No test score needed — start in the Intensive English Program and step up",
 
     /* --- 대학 한글명 --- */
     "매사추세츠공과대학교": "MIT",

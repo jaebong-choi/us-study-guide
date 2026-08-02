@@ -98,7 +98,10 @@
         }
     </script>
     <style>
-        body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; word-break: keep-all; }
+        /* 한국어 줄바꿈: 단어 중간 꺾임 방지 + 마지막 한 단어만 남는 widow 방지 */
+        p, li, dd, summary, td { text-wrap: pretty; }
+        h1, h2, h3, h4 { text-wrap: balance; }
         #hero-section {
             background:
                 radial-gradient(ellipse 85% 60% at 50% 52%, rgba(0,0,0,.62) 0%, rgba(0,0,0,.30) 55%, rgba(0,0,0,0) 78%),
@@ -437,14 +440,14 @@
 
         // ── 주요 커뮤니티칼리지(2+2 편입 출발점) ────────────────────
         const ccColleges = [
-            { name:'Santa Monica College', ko:'샌타모니카 칼리지', region:'캘리포니아 · LA', note:'UCLA 편입 전미 최다 배출로 유명한 대표 CC. UC TAG 지원.', url:'https://www.smc.edu/' },
-            { name:'De Anza College', ko:'디앤자 칼리지', region:'캘리포니아 · 실리콘밸리', note:'UC 편입 실적 최상위권. 쿠퍼티노 위치로 CS 계열 인기.', url:'https://www.deanza.edu/' },
-            { name:'Diablo Valley College', ko:'디아블로 밸리 칼리지', region:'캘리포니아 · 베이에리어', note:'UC Berkeley 인접 지역. 버클리 편입 다수 배출.', url:'https://www.dvc.edu/' },
-            { name:'Irvine Valley College', ko:'어바인 밸리 칼리지', region:'캘리포니아 · 어바인', note:'UC Irvine 인접. 안전한 도시 환경으로 유학생 선호.', url:'https://www.ivc.edu/' },
-            { name:'Bellevue College', ko:'벨뷰 칼리지', region:'워싱턴 · 시애틀 동부', note:'UW 시애틀 편입 1위 CC. 2026년 WWU 편입 보장(GPA 2.5+) 협약.', url:'https://www.bellevuecollege.edu/international/' },
-            { name:'Edmonds College', ko:'에드먼즈 칼리지', region:'워싱턴 · 시애틀 북부', note:'캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.', url:'https://www.edmonds.edu/' },
-            { name:'Seattle Central College', ko:'시애틀 센트럴 칼리지', region:'워싱턴 · 시애틀 도심', note:'도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.', url:'https://seattlecentral.edu/' },
-            { name:'Green River College', ko:'그린리버 칼리지', region:'워싱턴 · 오번', note:'유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.', url:'https://www.greenriver.edu/' }
+            { name:'Santa Monica College', ko:'샌타모니카 칼리지', region:'캘리포니아 · LA', note:'UCLA 편입 전미 최다 배출로 유명한 대표 CC. UC TAG 지원.', eng:'IELTS 5.0 · 점수 없이 입학 후 집중영어(IEP) 경유 가능', url:'https://www.smc.edu/' },
+            { name:'De Anza College', ko:'디앤자 칼리지', region:'캘리포니아 · 실리콘밸리', note:'UC 편입 실적 최상위권. 쿠퍼티노 위치로 CS 계열 인기.', eng:'IELTS 6.0 · 미달 시 조건부입학 후 제휴 어학원 수료로 진입', url:'https://www.deanza.edu/' },
+            { name:'Diablo Valley College', ko:'디아블로 밸리 칼리지', region:'캘리포니아 · 베이에리어', note:'UC Berkeley 인접 지역. 버클리 편입 다수 배출.', eng:'IELTS 5.5 · 부설 어학기관(IEC) 수료 시 시험 면제', url:'https://www.dvc.edu/' },
+            { name:'Irvine Valley College', ko:'어바인 밸리 칼리지', region:'캘리포니아 · 어바인', note:'UC Irvine 인접. 안전한 도시 환경으로 유학생 선호.', eng:'IELTS 4.5 · 제휴 어학원 지정 레벨 수료로 면제 가능', url:'https://www.ivc.edu/' },
+            { name:'Bellevue College', ko:'벨뷰 칼리지', region:'워싱턴 · 시애틀 동부', note:'UW 시애틀 편입 1위 CC. 2026년 WWU 편입 보장(GPA 2.5+) 협약.', eng:'IELTS 5.5 · 점수 없이 입학 후 집중영어 경유 가능', url:'https://www.bellevuecollege.edu/international/' },
+            { name:'Edmonds College', ko:'에드먼즈 칼리지', region:'워싱턴 · 시애틀 북부', note:'캠퍼스 기숙사 보유. 고교 미졸업자 대상 프로그램도 운영.', eng:'IELTS 5.0 · 점수 없으면 자체 배치고사 후 ESL부터 시작', url:'https://www.edmonds.edu/' },
+            { name:'Seattle Central College', ko:'시애틀 센트럴 칼리지', region:'워싱턴 · 시애틀 도심', note:'도심 캠퍼스로 접근성 우수. 편입 준비 과정이 체계적.', eng:'IELTS 5.5 · 조건부입학으로 영어과정 먼저 이수 가능', url:'https://seattlecentral.edu/' },
+            { name:'Green River College', ko:'그린리버 칼리지', region:'워싱턴 · 오번', note:'유학생 지원이 두터운 CC. 대학 편입 트랙 운영 오랜 역사.', eng:'점수 없이 입학 가능 · 집중영어(IEP)부터 단계 진입', url:'https://www.greenriver.edu/' }
         ];
 
         // ── 대학 목록 (US News 2026 · 경로 데이터) ───────────────────
@@ -1215,11 +1218,11 @@
                     </div>
                 </div>` : ''}
 
-                <div class="section-light py-20 px-4">
+                <div class="section-light py-14 px-4">
                     <div class="max-w-5xl mx-auto">
-                        <div class="text-center mb-14">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('routes3Title')}</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('routes3Sub')}</p>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('routes3Title')}</h3>
+                            <p class="text-[15px] text-mute max-w-2xl mx-auto leading-relaxed">${t('routes3Sub')}</p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="apple-card p-8 flex flex-col ${ring('direct')}">
@@ -1262,46 +1265,41 @@
                     </div>
                 </div>
 
-                <div class="section-light py-24 px-4 border-t border-gray-200">
-                    <div class="max-w-5xl mx-auto">
-                        <div class="text-center mb-12">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('costTitle')}</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('costSub')}</p>
+                <div class="section-light py-14 px-4 border-t border-gray-200">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('costTitle')}</h3>
+                            <p class="text-[15px] text-mute max-w-2xl mx-auto leading-relaxed">${t('costSub')}</p>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                            <div class="apple-card p-7 text-center">
-                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costPrivate')}</p>
-                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$55K ~ 68K+</p>
-                                <p class="text-[12px] text-mute leading-relaxed">${t('costPrivateNote')}</p>
-                            </div>
-                            <div class="apple-card p-7 text-center">
-                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costPublic')}</p>
-                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$30K ~ 50K</p>
-                                <p class="text-[12px] text-mute leading-relaxed">${t('costPublicNote')}</p>
-                            </div>
-                            <div class="apple-card p-7 text-center ring-2 ${rec === 'transfer' || rec === 'mix' ? 'ring-gold' : 'ring-transparent'}">
-                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costCc')}</p>
-                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$10K ~ 15K</p>
-                                <p class="text-[12px] text-mute leading-relaxed">${t('costCcNote')}</p>
-                            </div>
-                            <div class="apple-card p-7 text-center">
-                                <p class="text-[13px] font-semibold text-mute mb-2">${t('costLiving')}</p>
-                                <p class="text-2xl font-bold text-black tracking-tight mb-1">$25K ~ 35K</p>
-                                <p class="text-[12px] text-mute leading-relaxed">${t('costLivingNote')}</p>
-                            </div>
+                        <div class="apple-card overflow-hidden">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="py-3.5 px-5 text-[12px] font-semibold text-mute">${t('costColItem')}</th>
+                                        <th class="py-3.5 px-2 text-[12px] font-semibold text-mute">${t('costColRange')}</th>
+                                        <th class="py-3.5 px-5 text-[12px] font-semibold text-mute hidden sm:table-cell">${t('costColNote')}</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-[14px]">
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPrivate')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$55K ~ 68K+</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPrivateNote')}</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPublic')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$30K ~ 50K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPublicNote')}</td></tr>
+                                    <tr class="border-b border-gray-100 ${rec === 'transfer' || rec === 'mix' ? 'bg-[#fffbeb]' : ''}"><td class="py-3.5 px-5 font-semibold text-black">${t('costCc')}${rec === 'transfer' || rec === 'mix' ? ` <span class="route-badge bg-gold text-black ml-1">${t('recChip')}</span>` : ''}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$10K ~ 15K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costCcNote')}</td></tr>
+                                    <tr><td class="py-3.5 px-5 font-semibold text-black">${t('costLiving')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$25K ~ 35K</td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costLivingNote')}</td></tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <p class="text-center text-[13px] text-mute mt-8">${t('costNote')}</p>
+                        <p class="text-center text-[12px] text-mute mt-5">${t('costNote')}</p>
                     </div>
                 </div>
 
-                <div class="section-light py-24 px-4 border-t border-gray-200">
+                <div class="section-light py-14 px-4 border-t border-gray-200">
                     <div class="max-w-5xl mx-auto">
-                        <div class="text-center mb-12">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('ugPrepTitle')}</h3>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('ugPrepTitle')}</h3>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
-                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-folder-open"></i></div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="apple-card p-6 md:p-7 flex flex-col h-full">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-4 text-lg"><i class="fa-solid fa-folder-open"></i></div>
                                 <h4 class="text-xl font-bold text-black tracking-tight mb-1">${t('ugDocsTitle')}</h4>
                                 <p class="text-mute text-sm mb-6">${t('ugDocsSub')}</p>
                                 <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
@@ -1312,8 +1310,8 @@
                                     <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span>${t('ugDoc5')}</span></li>
                                 </ul>
                             </div>
-                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
-                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-clock"></i></div>
+                            <div class="apple-card p-6 md:p-7 flex flex-col h-full">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-4 text-lg"><i class="fa-solid fa-clock"></i></div>
                                 <h4 class="text-xl font-bold text-black tracking-tight mb-1">${t('ugTimingTitle')}</h4>
                                 <p class="text-mute text-sm mb-6">${t('ugTimingSub')}</p>
                                 <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
@@ -1341,52 +1339,53 @@
                     </div>
                 </div>
 
-                <div class="section-light py-24 px-4 border-t border-gray-200">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="text-center mb-4">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('pwSecTitle')}</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('pwSecSub')}</p>
+                <div class="section-light py-14 px-4 border-t border-gray-200">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('pwSecTitle')}</h3>
+                            <p class="text-[15px] text-mute max-w-2xl mx-auto leading-relaxed">${t('pwSecSub')}</p>
                         </div>
-                        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-10 mb-10 text-[13px] md:text-[14px] font-semibold">
-                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">1</span> ${t('pwStep1')}</span>
+                        <div class="flex flex-wrap items-center justify-center gap-2 mb-8 text-[13px] font-semibold">
+                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3.5 py-1.5 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">1</span> ${t('pwStep1')}</span>
                             <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
-                            <span class="inline-flex items-center gap-2 bg-gold rounded-full px-4 py-2 text-black"><span class="w-5 h-5 rounded-full bg-black text-white text-[11px] flex items-center justify-center">2</span> ${t('pwStep2')}</span>
+                            <span class="inline-flex items-center gap-2 bg-gold rounded-full px-3.5 py-1.5 text-black"><span class="w-5 h-5 rounded-full bg-black text-white text-[11px] flex items-center justify-center">2</span> ${t('pwStep2')}</span>
                             <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
-                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">3</span> ${t('pwStep3')}</span>
+                            <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3.5 py-1.5 text-gray-500"><span class="w-5 h-5 rounded-full bg-ink2 text-white text-[11px] flex items-center justify-center">3</span> ${t('pwStep3')}</span>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            ${pathwayProviders.map(p => `
-                                <div class="apple-card p-7">
-                                    <div class="flex flex-wrap items-center gap-2.5 mb-2">
-                                        <h4 class="text-lg font-bold text-black tracking-tight">${tr(p.name)}</h4>
+                        <div class="apple-card overflow-hidden">
+                            ${pathwayProviders.map((p, i) => `
+                                <div class="px-5 py-4 ${i < pathwayProviders.length - 1 ? 'border-b border-gray-100' : ''}">
+                                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                                        <h4 class="text-[15px] font-bold text-black tracking-tight">${tr(p.name)}</h4>
                                         <span class="route-badge bg-blue-50 text-royal">${tr(p.tag)}</span>
                                     </div>
-                                    <p class="text-[14px] text-gray-600 leading-relaxed">${tr(p.unis)}</p>
+                                    <p class="text-[13px] text-gray-600 leading-relaxed">${tr(p.unis)}</p>
                                 </div>`).join('')}
                         </div>
-                        <p class="text-center text-[13px] text-mute mt-8">${t('pwSecNote')}</p>
+                        <p class="text-center text-[12px] text-mute mt-5">${t('pwSecNote')}</p>
                         ${hubGuideCTA(rec === 'pathway' || rec === 'mix', HUB_GUIDE_URL, 'hubPwTitle', 'hubPwDesc', 'fa-book-open')}
                     </div>
                 </div>
 
-                <div class="section-light py-24 px-4 border-t border-gray-200">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="text-center mb-4">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('ccSecTitle')}</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('ccSecSub')}</p>
+                <div class="section-light py-14 px-4 border-t border-gray-200">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-5">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('ccSecTitle')}</h3>
+                            <p class="text-[15px] text-mute max-w-2xl mx-auto leading-relaxed">${t('ccSecSub')}</p>
                         </div>
-                        <div class="max-w-3xl mx-auto bg-[#fffbeb] border border-yellow-200 rounded-2xl p-6 mt-8 mb-10">
-                            <p class="text-[14px] text-gray-800 leading-relaxed"><i class="fa-solid fa-wand-magic-sparkles text-gold-deep mr-2"></i><strong>${t('ccTagLabel')}</strong> ${t('ccTagDesc')}</p>
+                        <div class="max-w-3xl mx-auto bg-[#fffbeb] border border-yellow-200 rounded-2xl px-5 py-4 mb-7">
+                            <p class="text-[13px] text-gray-800 leading-relaxed"><i class="fa-solid fa-wand-magic-sparkles text-gold-deep mr-2"></i><strong>${t('ccTagLabel')}</strong> ${t('ccTagDesc')}</p>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             ${ccColleges.map(cc => `
-                                <div class="apple-card p-7">
+                                <div class="apple-card p-5">
                                     <div class="flex flex-wrap items-baseline gap-x-2.5 mb-1">
                                         <h4 class="text-lg font-bold text-black tracking-tight">${cc.name}</h4>
                                         <span class="text-mute text-[12px] font-medium">${tr(cc.ko)}</span>
                                     </div>
                                     <p class="text-[13px] text-royal font-semibold mb-2"><i class="fa-solid fa-location-dot mr-1.5 text-[11px]"></i>${tr(cc.region)}</p>
-                                    <p class="text-[14px] text-gray-600 leading-relaxed mb-4">${tr(cc.note)}</p>
+                                    <p class="text-[14px] text-gray-600 leading-relaxed mb-2.5">${tr(cc.note)}</p>
+                                    <p class="text-[13px] text-gray-700 leading-relaxed mb-4 bg-paper rounded-lg px-3 py-2"><i class="fa-solid fa-spell-check text-royal mr-1.5 text-[11px]"></i>${tr(cc.eng)}</p>
                                     <a href="${cc.url}" target="_blank" rel="noopener" class="text-[13px] font-semibold text-ink2 hover:text-royal transition inline-flex items-center gap-1.5">${t('officialView')} <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>
                                 </div>`).join('')}
                         </div>
@@ -1394,11 +1393,11 @@
                     </div>
                 </div>
 
-                <div class="section-light py-20 px-4 border-t border-gray-200">
+                <div class="section-light py-14 px-4 border-t border-gray-200">
                     <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-10">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('listTitle')(fm ? tr(fm.label) : null)}</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">${t('listSub')(fm ? tr(fm.label) : null)}</p>
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 mb-3 text-black">${t('listTitle')(fm ? tr(fm.label) : null)}</h3>
+                            <p class="text-[15px] text-mute max-w-2xl mx-auto leading-relaxed">${t('listSub')(fm ? tr(fm.label) : null)}</p>
                         </div>
                         <div id="ug-list-top" class="flex flex-wrap items-center justify-center gap-2.5 mb-3">
                             <button class="filter-chip" data-f="all" onclick="renderUgCards('all')">${t('filterAll')}</button>
