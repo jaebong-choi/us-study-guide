@@ -96,7 +96,12 @@ const I18N = {
 
         /* ---------- 공식 링크 게시판 ---------- */
         boardTitle: '공식 정보 링크',
-        boardSubUg: '입학 요건 · 지원 시스템 · 비자는 아래 공식 채널이 가장 정확합니다.',
+        boardSubUg: '정부·학교 공식 자료만으로 쓴 유학 정보 글과, 입학 요건·지원 시스템·비자의 공식 채널입니다.',
+        infoRead: (min, ver) => `읽는 데 ${min}분 · 정보 확인 ${ver}`,
+        catPathway: '진학 경로',
+        catCost: '학비·비용',
+        catEnglish: '영어·요건',
+        catMajor: '전공 선택',
         boardBtn: 'EducationUSA 바로가기',
 
         /* ---------- 결과 공통 ---------- */
@@ -158,11 +163,11 @@ const I18N = {
 
         /* ---------- 비용 ---------- */
         costTitle: '연간 비용 한눈에 보기',
-        costSub: '2026-27 기준 국제학생 연간 학비입니다. 경로 선택의 가장 현실적인 변수입니다.',
-        costPrivate: '사립대 학비',
-        costPrivateNote: '아이비리그 · NYU 등. 명문 · 특정 전공은 $70K 이상',
-        costPublic: '주립대 학비 (비거주자)',
-        costPublicNote: 'UC · 미시간 · UW 등 주립 명문 기준',
+        costSub: '이 가이드가 다루는 미국 대학 126곳의 공시 학비(미 교육부 2026년 6월판) 가운데 절반이 들어가는 25~75% 구간입니다. 경로 선택의 가장 현실적인 변수입니다.',
+        costPrivate: '사립대 학비 (62곳)',
+        costPrivateNote: '중앙값 $65,025 · 전 학생 동일 요율. 명문 · 특정 전공은 $70K 이상',
+        costPublic: '주립대 학비 (64곳 · 비거주자)',
+        costPublicNote: '중앙값 $38,362 · 주외(out-of-state) 요율 기준',
         costCc: '커뮤니티칼리지 학비',
         costCcNote: '2년간 다니며 4년제 대비 절반 이하로 절감',
         costLiving: '생활비 (연간)',
@@ -326,7 +331,12 @@ const I18N = {
         ctaFoot: 'Before applying, confirm the latest requirements via <a href="https://educationusa.state.gov/" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white">EducationUSA</a>, the <a href="https://studyinthestates.dhs.gov/" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white">official F-1 visa guidance</a> and each university\'s admissions office.',
 
         boardTitle: "Official links",
-        boardSubUg: "For requirements, applications and visas, these official channels are the most accurate.",
+        boardSubUg: "Articles written from official sources only, plus the official channels for requirements, applications and visas.",
+        infoRead: (min, ver) => `${min} min read · verified ${ver}`,
+        catPathway: "Entry routes",
+        catCost: "Fees and costs",
+        catEnglish: "English and entry",
+        catMajor: "Choosing a field",
         boardBtn: "Open EducationUSA",
 
         ugBadge: "Undergraduate route result",
@@ -384,11 +394,11 @@ const I18N = {
         tfMeta: "Transfer success rests on your CC GPA and major prerequisites. 93% of UCLA's admitted transfers come from California community colleges.",
 
         costTitle: "Annual costs at a glance",
-        costSub: "International tuition for 2026-27 — the most practical variable in choosing a route.",
-        costPrivate: "Private tuition",
-        costPrivateNote: "Ivy League, NYU and peers; top names and some majors exceed $70K",
-        costPublic: "Public tuition (non-resident)",
-        costPublicNote: "Benchmarked on UC, Michigan, UW and other flagship publics",
+        costSub: "The middle half (25th-75th percentile) of published tuition across the 126 universities this guide covers, from the US Department of Education's June 2026 release — the most practical variable in choosing a route.",
+        costPrivate: "Private tuition (62 schools)",
+        costPrivateNote: "Median $65,025 · every student pays the same rate; top names and some majors exceed $70K",
+        costPublic: "Public tuition (64 schools · non-resident)",
+        costPublicNote: "Median $38,362 · out-of-state rate, which international students generally pay",
         costCc: "Community college tuition",
         costCcNote: "Two years at less than half the four-year cost",
         costLiving: "Living costs (per year)",

@@ -264,6 +264,67 @@
         html[data-theme="light"] #result-section .border-gray-300 { border-color:#d1d5db !important; }
         html[data-theme="light"] #result-section .bg-gray-50 { background-color:#f9fafb !important; }
         html[data-theme="light"] #result-section .bg-gray-100 { background-color:#f3f4f6 !important; }
+
+        /* ---------------------------------------------------------
+         * 다크 모드 보강 (2026-08-06) — .section-light · apple-card · 모달 · #home-extra
+         * 위의 #result-section 다크 블록은 bg-white/bg-paper만 다뤄서, 결과 안의
+         * .section-light 8곳과 흰 카드, 홈 하단, 학교 상세 모달이 다크에서 밝게 남았다.
+         * 이 사이트는 기본 테마가 라이트이므로(상단 초기화 스크립트) 여기부터는
+         * html[data-theme="dark"]로 스코프를 잡는다 — 라이트 복원 규칙이 따로 필요 없다.
+         * --------------------------------------------------------- */
+        html[data-theme="dark"] .section-light,
+        html[data-theme="dark"] #home-extra { background-color:#0b0b0c !important; color:#f5f5f7; }
+        html[data-theme="dark"] .section-light.border-gray-200 { border-color:#26262a !important; }
+
+        /* 링크 카드(a.apple-card)는 뒤에 로드되는 시트가 배경을 되돌려서 !important가 필요하다 */
+        html[data-theme="dark"] .apple-card { background:#1d1d1f !important; border-color:#3a3a3c !important; }
+        html[data-theme="dark"] .apple-card:hover { box-shadow:0 20px 40px rgba(0,0,0,.55); }
+        html[data-theme="dark"] #uni-modal .bg-white { background-color:#1d1d1f !important; }
+
+        /* 본문 글자 — 검정 고정 클래스들을 밝은 쪽으로 */
+        html[data-theme="dark"] .section-light .text-black, html[data-theme="dark"] #home-extra .text-black,
+        html[data-theme="dark"] #uni-modal .text-black,
+        html[data-theme="dark"] .section-light .text-ink2, html[data-theme="dark"] #home-extra .text-ink2,
+        html[data-theme="dark"] #uni-modal .text-ink2 { color:#f5f5f7 !important; }
+        html[data-theme="dark"] .section-light .text-gray-700, html[data-theme="dark"] .section-light .text-gray-600,
+        html[data-theme="dark"] #home-extra .text-gray-700, html[data-theme="dark"] #home-extra .text-gray-600,
+        html[data-theme="dark"] #uni-modal .text-gray-700 { color:#d1d1d6 !important; }
+        html[data-theme="dark"] .section-light .text-gray-500, html[data-theme="dark"] .section-light .text-mute,
+        html[data-theme="dark"] #home-extra .text-gray-500, html[data-theme="dark"] #home-extra .text-mute,
+        html[data-theme="dark"] #uni-modal .text-mute { color:#a1a1a6 !important; }
+        html[data-theme="dark"] .section-light .border-gray-100, html[data-theme="dark"] .section-light .border-gray-200,
+        html[data-theme="dark"] #home-extra .border-gray-100, html[data-theme="dark"] #home-extra .border-gray-200,
+        html[data-theme="dark"] #uni-modal .border-gray-200 { border-color:#3a3a3c !important; }
+        html[data-theme="dark"] .section-light .bg-gray-50, html[data-theme="dark"] .section-light .bg-gray-100,
+        html[data-theme="dark"] .section-light .bg-paper, html[data-theme="dark"] #uni-modal .bg-paper,
+        html[data-theme="dark"] #home-extra .bg-gray-50 { background-color:#2d2d2f !important; }
+        html[data-theme="dark"] .section-light .hover\:bg-gray-50:hover { background-color:#2d2d2f !important; }
+
+        /* 포인트 컬러 — 남색·와인색은 어두운 배경에서 죽는다. 밝은 톤으로 */
+        html[data-theme="dark"] .section-light .text-royal, html[data-theme="dark"] #home-extra .text-royal,
+        html[data-theme="dark"] #uni-modal .text-royal { color:#8cb4f5 !important; }
+        html[data-theme="dark"] .section-light .bg-blue-50, html[data-theme="dark"] #home-extra .bg-blue-50,
+        html[data-theme="dark"] #uni-modal .bg-blue-50 { background-color:#17273f !important; }
+        html[data-theme="dark"] .section-light .text-usred, html[data-theme="dark"] #uni-modal .text-usred { color:#ff9db4 !important; }
+        html[data-theme="dark"] .section-light .bg-\[\#FDECEF\], html[data-theme="dark"] #uni-modal .bg-\[\#FDECEF\] { background-color:#3a1a22 !important; }
+        html[data-theme="dark"] .section-light .bg-\[\#fffbeb\] { background-color:#33290f !important; }
+
+        /* 금색 배지·버튼은 배경이 그대로 밝으므로 글자를 도로 검게 — text-black 뒤집기의 예외 */
+        html[data-theme="dark"] .section-light .bg-gold.text-black,
+        html[data-theme="dark"] .section-light .bg-gold .text-black,
+        html[data-theme="dark"] #home-extra .bg-gold.text-black,
+        html[data-theme="dark"] #home-extra .bg-gold .text-black,
+        html[data-theme="dark"] #uni-modal .bg-gold.text-black,
+        html[data-theme="dark"] #uni-modal .bg-gold .text-black { color:#111 !important; }
+
+        /* 컴포넌트 클래스 */
+        html[data-theme="dark"] .info-badge { background:#2d2d2f; color:#d1d1d6; }
+        html[data-theme="dark"] .uni-link-banner { background:#1d1d1f; color:#f5f5f7; border-color:#3a3a3c; }
+        html[data-theme="dark"] .uni-link-banner:hover { background:#2d2d2f; }
+        html[data-theme="dark"] .uni-link-banner.is-primary { background:#f5f5f7; color:#1d1d1f; border-color:#f5f5f7; }
+        html[data-theme="dark"] .uni-link-banner.is-primary:hover { background:#d1d1d6; }
+        html[data-theme="dark"] .filter-chip { background:#1d1d1f; color:#d1d1d6; border-color:#3a3a3c; }
+        html[data-theme="dark"] .filter-chip.active { background:#f5f5f7; color:#111; border-color:#f5f5f7; }
     </style>
 </head>
 <body class="font-sans min-h-screen flex flex-col">
@@ -575,6 +636,7 @@
             "University of Illinois Urbana-Champaign": "us-uiuc",
             "University of Wisconsin–Madison": "us-wisconsin",
             "University of California, Santa Barbara": "us-ucsb",
+            "Ohio State University": "us-ohio-state",
             "University of Washington": "us-uw",
             "Rutgers University–New Brunswick": "us-rutgers",
             "Purdue University": "us-purdue",
@@ -597,6 +659,37 @@
         }
         const HUB_GUIDE_URL = `${HUB_BASE}/guide/us.html`;
         const HUB_LIST_URL = `${HUB_BASE}/uni/us.html`;
+
+        /* ── 유학 정보 글 — 허브 guide/us-info-*.html ─────────────────
+           허브의 data/articles-us-index.json을 fetch해 결과 하단에 띄운다(CA와 같은 방식).
+           ⚠ 제목·분류는 허브 articles-us.json 한곳에만 둔다. 여기 복사해 두면 반드시 어긋난다
+             (영국이 26편을 그렇게 어긋나게 뒀던 적이 있다).
+           같은 오리진(jaebong-choi.github.io)이라 CORS가 필요 없고, 못 받으면 조용히 비워 둔다. */
+        const HUB_ARTICLE = `${HUB_BASE}/guide/us-info-`;
+        const HUB_ARTICLE_INDEX = `${HUB_BASE}/data/articles-us-index.json`;
+        let ARTICLE_INDEX = null;
+        fetch(HUB_ARTICLE_INDEX)
+            .then(r => r.ok ? r.json() : null)
+            .then(d => { if (d) { ARTICLE_INDEX = d; renderInfoArticles(); } })
+            .catch(() => {});
+        const ARTICLE_CATS = { pathway: 'catPathway', cost: 'catCost', english: 'catEnglish', major: 'catMajor' };
+        function renderInfoArticles() {
+            const wrap = document.getElementById('us-articles');
+            if (!wrap || !ARTICLE_INDEX) return;
+            const en = LANG === 'en';
+            wrap.innerHTML = Object.keys(ARTICLE_INDEX).map(slug => {
+                const a = ARTICLE_INDEX[slug];
+                return `
+                <a href="${HUB_ARTICLE}${slug}.html" target="_blank" rel="noopener"
+                   class="flex items-center justify-between gap-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 transition group">
+                    <span class="min-w-0 text-left">
+                        <span class="block text-[15px] font-semibold text-gray-700 group-hover:text-black leading-snug">${en ? a.en : a.ko}</span>
+                        <span class="block text-[12px] text-mute mt-1">${t(ARTICLE_CATS[a.cat] || 'catPathway')} · ${t('infoRead')(a.min, a.ver)}</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-right text-royal text-sm shrink-0 group-hover:translate-x-1 transition-transform"></i>
+                </a>`;
+            }).join('');
+        }
 
         /* 진단 결과 안에서 전체 가이드로 넘어가는 안내 카드.
            추천 경로에 해당할 때만 금색 테두리로 강조한다. */
@@ -1137,6 +1230,7 @@
                             <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${t('boardTitle')}</h3>
                             <p class="text-lg text-mute max-w-2xl mx-auto leading-relaxed">${t('boardSubUg')}</p>
                         </div>
+                        <div id="us-articles" class="space-y-3 mb-10"></div>
                         <div class="space-y-3 mb-10">
                             ${list.map(a => `
                                 <a href="${a.url}" target="_blank" rel="noopener"
@@ -1383,8 +1477,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-[14px]">
-                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPrivate')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$55K ~ 68K+<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="55000" data-max="68000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPrivateNote')}</td></tr>
-                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPublic')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$30K ~ 50K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="30000" data-max="50000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPublicNote')}</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPrivate')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$59,486 ~ 68,017<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="59486" data-max="68017"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPrivateNote')}</td></tr>
+                                    <tr class="border-b border-gray-100"><td class="py-3.5 px-5 font-semibold text-black">${t('costPublic')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$31,688 ~ 43,842<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="31688" data-max="43842"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costPublicNote')}</td></tr>
                                     <tr class="border-b border-gray-100 ${rec === 'transfer' || rec === 'mix' ? 'bg-[#fffbeb]' : ''}"><td class="py-3.5 px-5 font-semibold text-black">${t('costCc')}${rec === 'transfer' || rec === 'mix' ? ` <span class="route-badge bg-gold text-black ml-1">${t('recChip')}</span>` : ''}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$10K ~ 15K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="10000" data-max="15000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costCcNote')}</td></tr>
                                     <tr><td class="py-3.5 px-5 font-semibold text-black">${t('costLiving')}</td><td class="py-3.5 px-2 font-bold text-black whitespace-nowrap">$25K ~ 35K<span class="krw block font-medium text-[12px] text-mute mt-0.5" data-min="25000" data-max="35000"></span></td><td class="py-3.5 px-5 text-mute text-[13px] hidden sm:table-cell">${t('costLivingNote')}</td></tr>
                                 </tbody>
@@ -1533,6 +1627,7 @@
             renderUgCards(rec === 'pathway' ? 'pw' : rec === 'transfer' ? 'tf' : rec === 'direct' ? 'direct' : 'all');
             history.replaceState(null, '', '#p=' + encodeURIComponent(JSON.stringify({ t: 'ug', s: currentState })));
             renderKrw();   // 비용표가 방금 그려졌으니 환율이 이미 도착해 있으면 바로 채운다
+            renderInfoArticles();   // 색인이 먼저 도착해 있으면 바로, 아니면 fetch 콜백이 채운다
             window.scrollTo({ top: 0 });
         }
 
